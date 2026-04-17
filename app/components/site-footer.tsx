@@ -7,21 +7,21 @@ const labels = {
     privacy: "privacy",
     manifesto: "manifesto",
     interventions: "interventions",
-    noCookies: "No cookies. No analytics.",
+    noCookies: "No cookies. Privacy-friendly analytics.",
   },
   nl: {
     contact: "contact",
     privacy: "privacy",
     manifesto: "manifest",
     interventions: "interventies",
-    noCookies: "Geen cookies. Geen analytics.",
+    noCookies: "Geen cookies. Privacyvriendelijke analytics.",
   },
   fr: {
     contact: "contact",
     privacy: "confidentialité",
     manifesto: "manifeste",
     interventions: "interventions",
-    noCookies: "Pas de cookies. Pas d’analytics.",
+    noCookies: "Pas de cookies. Analytique respectueuse de la vie privée.",
   },
 } as const;
 

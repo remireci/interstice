@@ -5,7 +5,7 @@ const copy = {
     title: "Privacy",
     paragraphs: [
       "This website does not use cookies.",
-      "This website does not use analytics tools.",
+      "We use privacy-friendly analytics (Umami) and search optimization tools (Google Search Console) to monitor site performance. These tools do not collect personal data and do not track individual visitors.",
       "If you contact Interstice by email, your message and contact details are used only for correspondence and editorial communication.",
     ],
   },
@@ -13,7 +13,7 @@ const copy = {
     title: "Privacy",
     paragraphs: [
       "Deze website gebruikt geen cookies.",
-      "Deze website gebruikt geen analysetools.",
+      "Wij maken gebruik van privacyvriendelijke analyse (Umami) en zoekoptimalisatietools (Google Search Console) om de prestaties van de site te controleren. Deze tools verzamelen geen persoonlijke gegevens en volgen geen individuele bezoekers.",
       "Als je Interstice per e-mail contacteert, worden je bericht en contactgegevens uitsluitend gebruikt voor correspondentie en redactionele communicatie.",
     ],
   },
@@ -21,7 +21,7 @@ const copy = {
     title: "Confidentialité",
     paragraphs: [
       "Ce site n’utilise pas de cookies.",
-      "Ce site n’utilise pas d’outils d’analyse.",
+      "Nous utilisons des outils d'analyse respectueux de la vie privée (Umami) et d'optimisation de recherche (Google Search Console) pour suivre les performances du site. Ces outils ne collectent pas de données personnelles et ne tracent pas les visiteurs individuels.",
       "Si vous contactez Interstice par e-mail, votre message et vos coordonnées sont utilisés uniquement pour la correspondance et la communication éditoriale.",
     ],
   },
