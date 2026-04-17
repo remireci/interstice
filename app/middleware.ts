@@ -1,0 +1,19 @@
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+
+export function middleware(request: NextRequest) {
+  const requestHeaders = new Headers(request.headers);
+  // Store the current URL in a header so Server Components can read it
+  requestHeaders.set("x-url", request.nextUrl.pathname);
+
+  return NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
+}
+
+export const config = {
+  // Matcher ignoring `/_next/` (static files), `/api/`, and common image formats
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|.*\\.png$).*)"],
+};
