@@ -500,7 +500,7 @@ Une intervention suivante analysera le contexte éditorial et institutionnel dan
 
   {
     slug: "against-the-ideology-of-connection",
-    publishedAt: "2026-04-16",
+    publishedAt: "2026-03-23",
     authors: ["Interstice"],
 
     seoTitle: {

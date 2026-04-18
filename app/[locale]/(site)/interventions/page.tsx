@@ -9,7 +9,7 @@ const copy = {
     title: "Interventions",
     description: "Texts, responses, and interventions published by Interstice.",
     intro: "Texts, responses, and interventions published by Interstice.",
-    eyebrow: "Archive",
+    eyebrow: "Editorial",
     forthcomingTitle: "In preparation",
     forthcomingIntro:
       "These interventions are announced and will be published in due course.",
@@ -20,7 +20,7 @@ const copy = {
     description:
       "Teksten, reacties en interventies gepubliceerd door Interstice.",
     intro: "Teksten, reacties en interventies gepubliceerd door Interstice.",
-    eyebrow: "Archief",
+    eyebrow: "Redactioneel",
     forthcomingTitle: "In voorbereiding",
     forthcomingIntro:
       "Deze interventies zijn aangekondigd en worden op een later moment gepubliceerd.",
@@ -30,7 +30,7 @@ const copy = {
     title: "Interventions",
     description: "Textes, réactions et interventions publiés par Interstice.",
     intro: "Textes, réactions et interventions publiés par Interstice.",
-    eyebrow: "Archive",
+    eyebrow: "Editorial",
     forthcomingTitle: "En préparation",
     forthcomingIntro:
       "Ces interventions sont annoncées et seront publiées ultérieurement.",

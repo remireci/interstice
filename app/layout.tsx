@@ -20,6 +20,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          defer
+          src="https://umami-loopbaantest-bitter-flower-1931.fly.dev/script.js"
+          data-website-id="7d9c2893-798c-4079-aa37-be2ddd334e96"
+        ></script>
+      </head>
       <body>{children}</body>
     </html>
   );

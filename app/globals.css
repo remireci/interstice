@@ -356,6 +356,16 @@ a:hover {
     max-width: 18ch;
   }
 
+  .listing-link h3 {
+    font-family: var(--font-ui);
+    font-size: clamp(1rem, 1vw, 1rem);
+    line-height: 1.03;
+    letter-spacing: -0.015em;
+    font-weight: 700;
+    margin: 0 0 0.55rem;
+    max-width: 18ch;
+  }
+
   .listing-link p {
     max-width: 44rem;
     margin: 0;
