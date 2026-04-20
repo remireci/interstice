@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
 import { interventions } from "@/lib/content/interventions";
 
-const baseUrl = "https://www.interstice.be";
+const baseUrl = "https://www.interstice.info";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPaths = [
