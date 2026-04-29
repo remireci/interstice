@@ -17,7 +17,11 @@ export function middleware(request: NextRequest) {
     pathname.startsWith("/icon.png") ||
     pathname.startsWith("/apple-icon.png")
   ) {
-    return NextResponse.next();
+    return NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    });
   }
 
   return NextResponse.next({
