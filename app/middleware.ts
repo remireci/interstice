@@ -6,6 +6,20 @@ export function middleware(request: NextRequest) {
   // Store the current URL in a header so Server Components can read it
   requestHeaders.set("x-url", request.nextUrl.pathname);
 
+  const { pathname } = request.nextUrl;
+
+  // Laat technische/public routes met rust
+  if (
+    pathname.startsWith("/unsubscribe") ||
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/favicon.ico") ||
+    pathname.startsWith("/icon.png") ||
+    pathname.startsWith("/apple-icon.png")
+  ) {
+    return NextResponse.next();
+  }
+
   return NextResponse.next({
     request: {
       headers: requestHeaders,
