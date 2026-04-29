@@ -21,7 +21,7 @@ if (process.env.NODE_ENV !== "production") {
   globalForDb.pool = pool;
 }
 
-// // For dev
+// For dev
 // import { Pool } from "pg";
 
 // const globalForDb = globalThis as unknown as {

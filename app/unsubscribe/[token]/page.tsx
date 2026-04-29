@@ -2,6 +2,7 @@ import { pool } from "@/lib/db";
 import { hashToken } from "@/lib/unsubscribe";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 export default async function UnsubscribePage({
   params,
@@ -21,6 +22,8 @@ export default async function UnsubscribePage({
     `,
     [tokenHash],
   );
+
+  console.log("Rows found:", tokenResult.rowCount);
 
   if (tokenResult.rowCount === 0) {
     return <main style={{ padding: "2rem" }}>Invalid unsubscribe link.</main>;
