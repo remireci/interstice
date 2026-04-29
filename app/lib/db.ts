@@ -12,10 +12,15 @@ export const pool =
   globalForDb.pool ??
   new Pool({
     connectionString: process.env.POSTGRES_URL ?? process.env.DATABASE_URL,
-    ssl:
-      process.env.NODE_ENV === "production"
-        ? { rejectUnauthorized: false }
-        : false,
+    // Supabase requires SSL in production.
+    // rejectUnauthorized: false bypasses the "self-signed" error.
+    ssl: {
+      rejectUnauthorized: false,
+    },
+    // Optimization for Serverless: limit max connections
+    max: 20,
+    idleTimeoutMillis: 30000,
+    connectionTimeoutMillis: 2000,
   });
 
 if (process.env.NODE_ENV !== "production") {
