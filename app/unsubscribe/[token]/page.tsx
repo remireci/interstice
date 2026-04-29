@@ -1,6 +1,8 @@
 import { pool } from "@/lib/db";
 import { hashToken } from "@/lib/unsubscribe";
 
+export const runtime = "nodejs";
+
 export default async function UnsubscribePage({
   params,
 }: {
