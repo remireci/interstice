@@ -48,7 +48,8 @@ export async function GET() {
   return new NextResponse(xml, {
     headers: {
       "Content-Type": "application/xml",
-      "Cache-Control": "public, s-maxage=86400, stale-while-revalidate",
+      "Content-Length": Buffer.byteLength(xml).toString(), // Add this
+      "X-Content-Type-Options": "nosniff",
     },
   });
 }
