@@ -79,7 +79,7 @@ export default async function InterventionsPage({
   return (
     <div className="listing-shell">
       <header className="listing-header">
-        <p className="eyebrow">{t.eyebrow}</p>
+        <p className="eyebrow">{t?.eyebrow || ""}</p>
         <h1 className="listing-title">{t.title}</h1>
         <p className="listing-intro">{t.intro}</p>
       </header>

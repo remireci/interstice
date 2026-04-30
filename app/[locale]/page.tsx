@@ -51,25 +51,28 @@ export default async function HomePage({
   return (
     <div className="home-shell">
       <section className="home-hero">
-        <p className="eyebrow">{t.eyebrow}</p>
-        <h1 className="home-title">{t.title}</h1>
-        <p className="home-subtitle">{t.subtitle}</p>
+        <p className="eyebrow">{t?.eyebrow || ""}</p>
+        <h1 className="home-title">{t?.title || ""}</h1>
+        <p className="home-subtitle">{t?.subtitle || ""}</p>
 
         <div className="home-actions">
-          <Link href={`/${locale}/${t.primaryHref}`} className="home-cta">
-            {t.primaryCta}
+          <Link
+            href={`/${locale}/${t?.primaryHref || ""}`}
+            className="home-cta"
+          >
+            {t?.primaryCta || ""}
           </Link>
         </div>
       </section>
 
       <section className="home-focus">
-        <p className="section-label">{t.secondaryLabel}</p>
+        <p className="section-label">{t?.secondaryLabel || ""}</p>
         <Link
           href={`/${locale}/interventions/christophe-van-gerrewey-de-witte-raaf-response`}
           className="home-focus__link"
         >
-          <h2>{t.secondaryTitle}</h2>
-          <p>{t.secondaryIntro}</p>
+          <h2>{t?.secondaryTitle || ""}</h2>
+          <p>{t?.secondaryIntro || ""}</p>
         </Link>
       </section>
     </div>
