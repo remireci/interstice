@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.interstice.be/sitemap.xml",
+    sitemap: "https://www.interstice.info/sitemap.xml",
   };
 }

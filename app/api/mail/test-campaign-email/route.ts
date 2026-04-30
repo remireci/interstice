@@ -8,18 +8,25 @@ const CAMPAIGN_SLUG = "dwr-response-2";
 export async function GET() {
   const contactResult = await pool.query(
     `
-    insert into contacts (email, status, language, source)
-    values ($1, 'active', 'en', 'test')
-    on conflict (email) do update
-    set status = 'active',
-        language = 'en',
-        updated_at = now()
-    returning *
-    `,
+  insert into contacts (email, status, language, source)
+  values ($1, 'active', 'en', 'test')
+  on conflict (email) do update
+  set updated_at = now()
+  returning *
+  `,
     [TEST_EMAIL],
   );
 
   const contact = contactResult.rows[0];
+
+  if (contact.status !== "active") {
+    return NextResponse.json({
+      ok: false,
+      skipped: true,
+      reason: `Contact status is '${contact.status}', not active.`,
+      email: contact.email,
+    });
+  }
 
   const campaignResult = await pool.query(
     `select * from campaigns where slug = $1 limit 1`,
