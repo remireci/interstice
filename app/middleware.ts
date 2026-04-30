@@ -42,6 +42,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
+    // Add sitemap.xml to the negative lookahead
     "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.*\\.png$).*)",
   ],
 };
