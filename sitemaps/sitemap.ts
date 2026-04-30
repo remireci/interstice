@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticEntries: MetadataRoute.Sitemap = locales.flatMap((locale) =>
     staticPaths.map((path) => ({
-      url: `${baseUrl}/${locale}${path}`,
+      url: `${baseUrl}/${locale}${path === "" ? "/" : path}`,
       // Use .toISOString() if you want to provide a string,
       // or just a Date object.
       lastModified: new Date("2026-04-29T09:36:02.670Z"),
