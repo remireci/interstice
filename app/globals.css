@@ -904,4 +904,12 @@ a:hover {
       line-height: 1.68;
     }
   }
+
+  .editorial-translation {
+    display: block;
+    margin-top: 0.4rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    opacity: 0.65;
+  }
 }
