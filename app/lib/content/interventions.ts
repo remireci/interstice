@@ -487,7 +487,7 @@ For the full text, see:
 (<em>Negative Dialectics</em>, trans. E.B. Ashton, Routledge, 2004)
 </span>
 
-    <p>That thinking, whatever it may be called, neither stops nor falls silent — this is a conviction that lies at the basis of <em>De Witte Raaf</em>, and of this issue in particular. Across some ten essays and articles, the challenge is taken up to think better, from the conviction that only in this way can a better life come within reach. The fundamental assumption is this: there is no thinking that is not prepared by reading; reasoning is reacting, which at once provides art and culture with a reason for being.]</p>
+    <p>That thinking, whatever it may be called, neither stops nor falls silent — this is a conviction that lies at the basis of <em>De Witte Raaf</em>, and of this issue in particular. Across some ten essays and articles, the challenge is taken up to think better, from the conviction that only in this way can a better life come within reach. The fundamental assumption is this: there is no thinking that is not prepared by reading; reasoning is reacting, which at once provides art and culture with a reason for being.</p>
 
     <p>...</p>
 

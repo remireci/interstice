@@ -212,7 +212,9 @@ ${unsubscribeUrl}
   return NextResponse.json({
     ok: true,
     campaign: CAMPAIGN_SLUG,
-    attempted: recipientsResult.rows.length,
+    selected: recipientsResult.rows.length,
+    sent: results.filter((r) => r.status === "sent").length,
+    failed: results.filter((r) => r.status === "failed").length,
     results,
   });
 }

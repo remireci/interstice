@@ -5,8 +5,17 @@ import { parse } from "csv-parse/sync";
 
 const { Pool } = pkg;
 
+const dbUrl = new URL(process.env.POSTGRES_URL);
+
+dbUrl.searchParams.delete("sslmode");
+
+console.log(
+  "Connecting to database at",
+  dbUrl.toString().replace(/:[^:@]+@/, ":...@"),
+);
+
 const pool = new Pool({
-  connectionString: process.env.POSTGRES_URL,
+  connectionString: dbUrl.toString(),
   ssl: {
     rejectUnauthorized: false,
   },
@@ -16,7 +25,7 @@ const filePath = process.argv[2];
 
 if (!filePath) {
   console.error(
-    "Usage: node scripts/import-contacts.mjs /home/reciproque/Downloads/Collected Addresses_csv-utf8.csv",
+    "Usage: node scripts/import-contacts.mjs /home/reciproque/Documents/tijdelijk/Untitled 3.csv",
   );
   process.exit(1);
 }
@@ -29,6 +38,9 @@ const rows = parse(csv, {
   trim: true,
 });
 
+let imported = 0;
+let skippedInvalid = 0;
+
 for (const row of rows) {
   const email = String(row["Primary Email"] || "")
     .trim()
@@ -37,9 +49,12 @@ for (const row of rows) {
   const lastName = String(row["Last Name"] || "").trim();
   const displayName = String(row["Display Name"] || "").trim();
 
-  if (!email || !email.includes("@")) continue;
+  if (!email || !email.includes("@")) {
+    skippedInvalid++;
+    continue;
+  }
 
-  await pool.query(
+  const result = await pool.query(
     `
       insert into contacts (
         email,
@@ -51,12 +66,7 @@ for (const row of rows) {
         status
       )
       values ($1, $2, $3, $4, $5, $6, 'active')
-      on conflict (email) do update
-      set
-        first_name = excluded.first_name,
-        last_name = excluded.last_name,
-        display_name = excluded.display_name,
-        updated_at = now()
+      on conflict (email) do nothing
     `,
     [
       email,
@@ -64,13 +74,21 @@ for (const row of rows) {
       lastName || null,
       displayName || null,
       "nl",
-      "thunderbird-csv",
+      "manually-imported",
     ],
   );
+
+  imported += result.rowCount;
 }
 
 await pool.end();
-console.log(`Imported ${rows.length} rows`);
+
+console.log(`CSV rows: ${rows.length}`);
+console.log(`Imported new contacts: ${imported}`);
+console.log(
+  `Skipped existing/duplicates: ${rows.length - imported - skippedInvalid}`,
+);
+console.log(`Skipped invalid emails: ${skippedInvalid}`);
 
 // import fs from "node:fs";
 // import pkg from "pg";
