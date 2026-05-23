@@ -35,7 +35,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
           </Link>
           <nav className="site-nav">
             <Link href={`/${locale}/manifesto`}>{t.manifesto}</Link>
-            <Link href={`/${locale}/interventions`}>{t.interventions}</Link>
+            {/* <Link href={`/${locale}/interventions`}>{t.interventions}</Link> */}
           </nav>
         </div>
 

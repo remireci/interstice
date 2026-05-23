@@ -33,7 +33,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
       <div className="site-footer__inner">
         <nav className="site-footer__nav" aria-label="Footer">
           <Link href={`/${locale}/manifesto`}>{t.manifesto}</Link>
-          <Link href={`/${locale}/interventions`}>{t.interventions}</Link>
+          {/* <Link href={`/${locale}/interventions`}>{t.interventions}</Link> */}
           <Link href={`/${locale}/contact`}>{t.contact}</Link>
           <Link href={`/${locale}/privacy`}>{t.privacy}</Link>
           <Link href={`/unsubscribe`}>unsubscribe</Link>

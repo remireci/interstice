@@ -3,6 +3,7 @@ import Link from "next/link";
 import { interventions } from "@/lib/content/interventions";
 import { forthcomingInterventions } from "@/lib/content/forthcoming-interventions";
 import type { Locale } from "@/lib/i18n";
+import { redirect } from "next/navigation";
 
 const copy = {
   en: {
@@ -43,6 +44,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: Locale }>;
 }): Promise<Metadata> {
+  redirect("/");
   const { locale } = await params;
   const t = copy[locale];
 

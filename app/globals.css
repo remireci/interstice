@@ -129,6 +129,12 @@ a:hover {
   border-bottom: 1px solid var(--color-border);
 }
 
+.home-focus {
+  padding: 1rem 4rem 10rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 1.4rem;
+}
+
 .eyebrow,
 .section-label,
 .article-kicker {

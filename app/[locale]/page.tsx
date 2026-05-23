@@ -56,24 +56,29 @@ export default async function HomePage({
         <p className="home-subtitle">{t?.subtitle || ""}</p>
 
         <div className="home-actions">
-          <Link
+          {/* <Link
             href={`/${locale}/${t?.primaryHref || ""}`}
             className="home-cta"
           >
             {t?.primaryCta || ""}
-          </Link>
+          </Link> */}
         </div>
       </section>
 
       <section className="home-focus">
-        <p className="section-label">{t?.secondaryLabel || ""}</p>
-        <Link
+        {/* <p className="section-label">
+          {t?.secondaryLabel || ""}</p> */}
+        {/* <Link
           href={`/${locale}/interventions/christophe-van-gerrewey-de-witte-raaf-response`}
           className="home-focus__link"
         >
           <h2>{t?.secondaryTitle || ""}</h2>
           <p>{t?.secondaryIntro || ""}</p>
-        </Link>
+        </Link> */}
+        Interstice is inactive. We are reconsidering the editorial and
+        infrastructural conditions under which this project could continue to
+        exist. No further publications or communications are currently planned.
+        <p>Interstice</p>
       </section>
     </div>
   );

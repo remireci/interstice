@@ -4,6 +4,7 @@ import { interventions } from "@/lib/content/interventions";
 import { locales, type Locale } from "@/lib/i18n";
 import { EditorialPanel } from "@/components/editorial-panel";
 import { ArticleBlocks } from "@/components/article-blocks";
+import { redirect } from "next/navigation";
 
 type Props = {
   params: Promise<{
@@ -64,115 +65,116 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function InterventionPage({ params }: Props) {
-  const { locale, slug } = await params;
-  const post = getIntervention(slug);
+  redirect("/");
+  // const { locale, slug } = await params;
+  // const post = getIntervention(slug);
 
-  if (!post) notFound();
+  // if (!post) notFound();
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.seoTitle[locale],
-    description: post.seoDescription[locale],
-    author: post.authors.map((name) => ({
-      "@type": "Organization",
-      name,
-    })),
-    datePublished: post.publishedAt,
-    dateModified: post.updatedAt ?? post.publishedAt,
-    inLanguage: locale,
-    mainEntityOfPage: buildUrl(locale, slug),
-    publisher: {
-      "@type": "Organization",
-      name: "Interstice",
-      url: "https://www.interstice.be",
-    },
-  };
+  // const jsonLd = {
+  //   "@context": "https://schema.org",
+  //   "@type": "Article",
+  //   headline: post.seoTitle[locale],
+  //   description: post.seoDescription[locale],
+  //   author: post.authors.map((name) => ({
+  //     "@type": "Organization",
+  //     name,
+  //   })),
+  //   datePublished: post.publishedAt,
+  //   dateModified: post.updatedAt ?? post.publishedAt,
+  //   inLanguage: locale,
+  //   mainEntityOfPage: buildUrl(locale, slug),
+  //   publisher: {
+  //     "@type": "Organization",
+  //     name: "Interstice",
+  //     url: "https://www.interstice.be",
+  //   },
+  // };
 
-  const paragraphs = post.bodyHtml
-    ? post.bodyHtml[locale]
-        .split("</p>")
-        .filter(Boolean)
-        .map((chunk) => `${chunk}</p>`)
-    : [];
+  // const paragraphs = post.bodyHtml
+  //   ? post.bodyHtml[locale]
+  //       .split("</p>")
+  //       .filter(Boolean)
+  //       .map((chunk) => `${chunk}</p>`)
+  //   : [];
 
-  return (
-    <article className="article-shell">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <header className="article-header">
-        <p className="article-kicker">Intervention</p>
-        <h1 className="article-title">{post.title[locale]}</h1>
-        <p className="article-intro">{post.intro[locale]}</p>
-      </header>
-      <section className="article-context" aria-labelledby="context-heading">
-        <h2 id="context-heading" className="section-label">
-          {post.contextLabel[locale]}
-        </h2>
-        <p>{post.contextText[locale]}</p>
-        {post.editorialHtml?.[locale] && post.editorialTitle?.[locale] ? (
-          <EditorialPanel
-            locale={locale}
-            title={post.editorialTitle[locale]}
-            html={post.editorialHtml[locale]}
-          />
-        ) : null}
-      </section>
+  // return (
+  //   <article className="article-shell">
+  //     <script
+  //       type="application/ld+json"
+  //       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+  //     />
+  //     <header className="article-header">
+  //       <p className="article-kicker">Intervention</p>
+  //       <h1 className="article-title">{post.title[locale]}</h1>
+  //       <p className="article-intro">{post.intro[locale]}</p>
+  //     </header>
+  //     <section className="article-context" aria-labelledby="context-heading">
+  //       <h2 id="context-heading" className="section-label">
+  //         {post.contextLabel[locale]}
+  //       </h2>
+  //       <p>{post.contextText[locale]}</p>
+  //       {post.editorialHtml?.[locale] && post.editorialTitle?.[locale] ? (
+  //         <EditorialPanel
+  //           locale={locale}
+  //           title={post.editorialTitle[locale]}
+  //           html={post.editorialHtml[locale]}
+  //         />
+  //       ) : null}
+  //     </section>
 
-      {post.bodyBlocks?.length ? (
-        <ArticleBlocks blocks={post.bodyBlocks} locale={locale} />
-      ) : (
-        <div className="article-grid">
-          <div className="article-main prose">
-            {paragraphs.map((html, index) => {
-              const note = post.marginalia?.find(
-                (item) => item.anchorParagraph === index + 1,
-              );
+  //     {post.bodyBlocks?.length ? (
+  //       <ArticleBlocks blocks={post.bodyBlocks} locale={locale} />
+  //     ) : (
+  //       <div className="article-grid">
+  //         <div className="article-main prose">
+  //           {paragraphs.map((html, index) => {
+  //             const note = post.marginalia?.find(
+  //               (item) => item.anchorParagraph === index + 1,
+  //             );
 
-              return (
-                <div key={index} className="paragraph-row">
-                  <div
-                    className="paragraph-content"
-                    dangerouslySetInnerHTML={{ __html: html }}
-                  />
-                  {note ? (
-                    <aside className="marginal-note" aria-label="Marginal note">
-                      {note.text[locale]}
-                    </aside>
-                  ) : null}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
+  //             return (
+  //               <div key={index} className="paragraph-row">
+  //                 <div
+  //                   className="paragraph-content"
+  //                   dangerouslySetInnerHTML={{ __html: html }}
+  //                 />
+  //                 {note ? (
+  //                   <aside className="marginal-note" aria-label="Marginal note">
+  //                     {note.text[locale]}
+  //                   </aside>
+  //                 ) : null}
+  //               </div>
+  //             );
+  //           })}
+  //         </div>
+  //       </div>
+  //     )}
 
-      {post.bibliographyHtml?.[locale] ? (
-        <section
-          className="article-bibliography"
-          aria-labelledby="bibliography-heading"
-        >
-          <details>
-            <summary id="bibliography-heading">
-              {post.bibliographyLabel[locale]}
-            </summary>
-            <div
-              className="prose bibliography-content"
-              dangerouslySetInnerHTML={{
-                __html: post.bibliographyHtml[locale],
-              }}
-            />
-          </details>
-        </section>
-      ) : null}
-      {/* <ArticleBody
-        html={post.bodyHtml[locale]}
-        locale={locale}
-        marginalia={post.marginalia}
-        ghosts={post.ghosts}
-      /> */}
-    </article>
-  );
+  //     {post.bibliographyHtml?.[locale] ? (
+  //       <section
+  //         className="article-bibliography"
+  //         aria-labelledby="bibliography-heading"
+  //       >
+  //         <details>
+  //           <summary id="bibliography-heading">
+  //             {post.bibliographyLabel[locale]}
+  //           </summary>
+  //           <div
+  //             className="prose bibliography-content"
+  //             dangerouslySetInnerHTML={{
+  //               __html: post.bibliographyHtml[locale],
+  //             }}
+  //           />
+  //         </details>
+  //       </section>
+  //     ) : null}
+  //     {/* <ArticleBody
+  //       html={post.bodyHtml[locale]}
+  //       locale={locale}
+  //       marginalia={post.marginalia}
+  //       ghosts={post.ghosts}
+  //     /> */}
+  //   </article>
+  // );
 }
