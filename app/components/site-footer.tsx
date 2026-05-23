@@ -36,6 +36,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           <Link href={`/${locale}/interventions`}>{t.interventions}</Link>
           <Link href={`/${locale}/contact`}>{t.contact}</Link>
           <Link href={`/${locale}/privacy`}>{t.privacy}</Link>
+          <Link href={`/unsubscribe`}>unsubscribe</Link>
         </nav>
 
         <p className="site-footer__note">{t.noCookies}</p>
