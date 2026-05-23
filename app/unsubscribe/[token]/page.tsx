@@ -54,7 +54,7 @@ export default async function UnsubscribePage({
   return (
     <main style={{ padding: "2rem" }}>
       <h1>You have been unsubscribed.</h1>
-      <p>{record.email}</p>
+      <p>This address has been removed from future mailings.</p>
     </main>
   );
 }
