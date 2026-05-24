@@ -33,10 +33,11 @@ export function SiteHeader({ locale }: { locale: Locale }) {
           <Link href={`/${locale}`} className="site-logo">
             INTERSTICE
           </Link>
-          <nav className="site-nav">
+          {/* <nav className="site-nav">
             <Link href={`/${locale}/manifesto`}>{t.manifesto}</Link>
             {/* <Link href={`/${locale}/interventions`}>{t.interventions}</Link> */}
-          </nav>
+          </nav> 
+          */}
         </div>
 
         {/* Use the new client component here */}
