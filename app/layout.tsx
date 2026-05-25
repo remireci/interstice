@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,11 +22,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <script
+        <Script
           defer
           src="https://umami-loopbaantest-bitter-flower-1931.fly.dev/script.js"
           data-website-id="7d9c2893-798c-4079-aa37-be2ddd334e96"
-        ></script>
+        ></Script>
       </head>
       <body>{children}</body>
     </html>
