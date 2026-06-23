@@ -28,7 +28,7 @@ export function proxy(request: NextRequest) {
 
     const parts = pathname.split("/").filter(Boolean);
     const locale = parts[0] || "en";
-    const site = parts[1] || "main"; // pas "main" aan als jullie site-param anders heet
+    const site = parts[1] || ""; // pas "main" aan als jullie site-param anders heet
 
     url.pathname = `/${locale}/${site}/unavailable`;
 

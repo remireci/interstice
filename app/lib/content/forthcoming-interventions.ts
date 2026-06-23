@@ -10,7 +10,7 @@ export type ForthcomingIntervention = {
 export const forthcomingInterventions: ForthcomingIntervention[] = [
   {
     slug: "editorial-context-de-witte-raaf",
-    expectedAt: "2026-05",
+    expectedAt: "2026-07",
     title: {
       en: "On editorial refusal and institutional framing",
       nl: "Over redactionele weigering en institutionele kadering",
