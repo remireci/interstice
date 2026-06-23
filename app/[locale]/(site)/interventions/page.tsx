@@ -44,7 +44,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: Locale }>;
 }): Promise<Metadata> {
-  redirect("/");
+  // redirect("/");
   const { locale } = await params;
   const t = copy[locale];
 
