@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const SITE_INACTIVE = false;
+const SITE_INACTIVE = true;
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
