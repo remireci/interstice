@@ -15,10 +15,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticEntries: MetadataRoute.Sitemap = locales.flatMap((locale) =>
     staticPaths.map((path) => ({
-      url: `${baseUrl}/${locale}${path}`, // Clean path joining (no trailing slash inconsistency)
+      url: `${baseUrl}/${locale}${path}`,
       lastModified: new Date("2026-04-29T09:36:02.670Z"),
       changeFrequency: path === "" ? "weekly" : "monthly",
       priority: path === "" ? 1.0 : 0.8,
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((l) => [l, `${baseUrl}/${l}${path}`]),
+        ),
+      },
     })),
   );
 
