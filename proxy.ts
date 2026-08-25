@@ -6,6 +6,11 @@ const SITE_INACTIVE = false;
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Explicit bypass for system files to prevent any further processing
+  if (pathname === "/sitemap.xml" || pathname === "/robots.txt") {
+    return NextResponse.next();
+  }
+
   const allowed =
     pathname.includes("/unavailable") ||
     pathname.includes("/unsubscribe") ||
@@ -28,7 +33,7 @@ export function proxy(request: NextRequest) {
 
     const parts = pathname.split("/").filter(Boolean);
     const locale = parts[0] || "en";
-    const site = parts[1] || ""; // pas "main" aan als jullie site-param anders heet
+    const site = parts[1] || "";
 
     url.pathname = `/${locale}/${site}/unavailable`;
 
@@ -38,6 +43,9 @@ export function proxy(request: NextRequest) {
   return NextResponse.next();
 }
 
+// Exclude sitemap.xml directly at the Next.js routing level
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|sitemap\\.xml|robots\\.txt).*)",
+  ],
 };
