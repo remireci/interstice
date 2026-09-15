@@ -17,14 +17,8 @@ function formatDate(date: string | Date | undefined) {
 
   const parsed = new Date(date);
 
-  if (isNaN(parsed.getTime())) {
-    return null;
-  }
-
-  return parsed.toISOString();
+  return Number.isNaN(parsed.getTime()) ? null : parsed.toISOString();
 }
-
-export const dynamic = "force-static";
 
 export async function GET() {
   const staticPaths = [
@@ -41,19 +35,17 @@ export async function GET() {
 
       const alternates = locales
         .map(
-          (alternateLocale) => `
-    <xhtml:link
-      rel="alternate"
-      hreflang="${escapeXml(alternateLocale)}"
-      href="${escapeXml(`${baseUrl}/${alternateLocale}${path}`)}"
-    />`,
+          (alternateLocale) =>
+            `    <xhtml:link rel="alternate" hreflang="${escapeXml(
+              alternateLocale,
+            )}" href="${escapeXml(`${baseUrl}/${alternateLocale}${path}`)}" />`,
         )
-        .join("");
+        .join("\n");
 
-      return `
-  <url>
+      return `  <url>
     <loc>${escapeXml(url)}</loc>
-    <lastmod>2026-04-29T09:36:02.670Z</lastmod>${alternates}
+    <lastmod>2026-04-29T09:36:02.670Z</lastmod>
+${alternates}
   </url>`;
     }),
   );
@@ -66,25 +58,20 @@ export async function GET() {
 
       const alternates = locales
         .map(
-          (alternateLocale) => `
-    <xhtml:link
-      rel="alternate"
-      hreflang="${escapeXml(alternateLocale)}"
-      href="${escapeXml(
-        `${baseUrl}/${alternateLocale}/interventions/${item.slug}`,
-      )}"
-    />`,
+          (alternateLocale) =>
+            `    <xhtml:link rel="alternate" hreflang="${escapeXml(
+              alternateLocale,
+            )}" href="${escapeXml(
+              `${baseUrl}/${alternateLocale}/interventions/${item.slug}`,
+            )}" />`,
         )
-        .join("");
+        .join("\n");
 
-      return `
-  <url>
+      return `  <url>
     <loc>${escapeXml(url)}</loc>${
-      lastModified
-        ? `
-    <lastmod>${lastModified}</lastmod>`
-        : ""
-    }${alternates}
+      lastModified ? `\n    <lastmod>${lastModified}</lastmod>` : ""
+    }
+${alternates}
   </url>`;
     }),
   );
@@ -101,7 +88,6 @@ ${[...staticEntries, ...interventionEntries].join("\n")}
     status: 200,
     headers: {
       "Content-Type": "application/xml; charset=utf-8",
-      "Cache-Control": "public, max-age=3600",
     },
   });
 }
