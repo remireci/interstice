@@ -78,6 +78,11 @@ export default async function InterventionsPage({
   const { locale } = await params;
   const t = copy[locale];
 
+  const sortedInterventions = [...interventions].sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
+
   return (
     <div className="listing-shell">
       <header className="listing-header">
@@ -92,7 +97,7 @@ export default async function InterventionsPage({
         </h2>
 
         <div className="listing-items">
-          {interventions.map((item) => (
+          {sortedInterventions.map((item) => (
             <article key={item.slug} className="listing-item">
               <p className="listing-date">{item.publishedAt}</p>
               <Link

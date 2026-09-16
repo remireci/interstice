@@ -18,7 +18,7 @@ function getIntervention(slug: string) {
 }
 
 function buildUrl(locale: Locale, slug: string) {
-  return `https://www.interstice.be/${locale}/interventions/${slug}`;
+  return `https://www.interstice.info/${locale}/interventions/${slug}`;
 }
 
 export async function generateStaticParams() {
@@ -87,7 +87,7 @@ export default async function InterventionPage({ params }: Props) {
     publisher: {
       "@type": "Organization",
       name: "Interstice",
-      url: "https://www.interstice.be",
+      url: "https://www.interstice.info",
     },
   };
 

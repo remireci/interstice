@@ -19,6 +19,7 @@ export type InterventionEntry = {
   seoDescription: Record<Locale, string>;
   title: Record<Locale, string>;
   intro: Record<Locale, string>;
+  listingIntro: Record<Locale, string>;
   contextLabel: Record<Locale, string>;
   contextText: Record<Locale, string>;
   bibliographyLabel: Record<Locale, string>;
@@ -64,6 +65,13 @@ export const interventions: InterventionEntry[] = [
       en: "A response submitted as a readers’ letter to De Witte Raaf and not published. The text addresses a misreading of Adorno and the transformation of critique into program.",
       nl: "Een als lezersbrief ingestuurde maar niet gepubliceerde tekst. De tekst behandelt een verschuiving in de lezing van Adorno en de omzetting van kritiek in een programma.",
       fr: "Un texte soumis comme lettre de lecteur à De Witte Raaf mais non publié. Il examine une lecture d’Adorno et la transformation de la critique en programme.",
+    },
+    listingIntro: {
+      en: "A response to Christophe Van Gerrewey’s editorial in De Witte Raaf, examining his reading of Adorno and the transformation of critique into a program of improvement.",
+
+      nl: "Een reactie op het editoriaal van Christophe Van Gerrewey in De Witte Raaf, over zijn lezing van Adorno en de omzetting van kritiek in een programma van verbetering.",
+
+      fr: "Une réponse à l’éditorial de Christophe Van Gerrewey dans De Witte Raaf, consacrée à sa lecture d’Adorno et à la transformation de la critique en programme d’amélioration.",
     },
     contextLabel: {
       en: "Context",
@@ -123,7 +131,7 @@ A subsequent intervention will examine the editorial and institutional context i
       <p>De crisis waarin de westerse democratieën zich bevinden, is wellicht eerder gelinkt aan ‘gebrekkig lezen’ dan aan ‘gebrekkig denken’. Door een lezing die het ontologische niveau verschuift, ontneemt de editorialist het denken van Adorno zijn interne weerstand en neutraliseert zo zijn kritische spanning. Dat is niet zonder ironie.</p>
 
         <p class="follow-up-note">
-Een volgende interventie zal de redactionele en institutionele context analyseren waarin deze reactie niet werd opgenomen.
+Een latere interventie zal de redactionele en institutionele context analyseren waarin deze reactie niet werd opgenomen.
 </p>
       `,
       fr: `      <p><strong>Sur la neutralisation de la dialectique négative</strong></p>
@@ -517,32 +525,40 @@ For the full text, see:
   },
 
   {
-    slug: "against-the-ideology-of-connection",
-    publishedAt: "2026-03-23",
+    slug: "connection-as-ideology",
+    publishedAt: "2026-09-15",
     authors: ["Interstice"],
 
+    title: {
+      en: "Connection as Ideology",
+      nl: "Verbinding als ideologie",
+      fr: "Le lien comme idéologie",
+    },
+
     seoTitle: {
-      en: "Against the Ideology of Connection",
-      nl: "Tegen de ideologie van verbinding",
-      fr: "Contre l’idéologie du lien",
+      en: "Connection as Ideology",
+      nl: "Verbinding als ideologie",
+      fr: "Le lien comme idéologie",
     },
 
     seoDescription: {
-      en: "Interstice examines how the notion of ‘connection’ can function as a depoliticizing force, masking conflict and reinforcing forms of domination.",
-      nl: "Interstice onderzoekt hoe het begrip ‘verbinding’ kan functioneren als een depolitiserende kracht die conflict maskeert en vormen van dominantie versterkt.",
-      fr: "Interstice examine comment la notion de « lien » peut fonctionner comme une force dépolitisante qui masque les conflits et renforce des formes de domination.",
-    },
-
-    title: {
-      en: "Against the Ideology of Connection",
-      nl: "Tegen de ideologie van verbinding",
-      fr: "Contre l’idéologie du lien",
+      en: "Interstice examines how ‘connection’ has become a normative ideal in European cultural policy, and what this means for democratic plurality and the autonomy of art.",
+      nl: "Interstice onderzoekt hoe ‘verbinding’ een normatief ideaal is geworden in het Europese cultuurbeleid, en wat dat betekent voor democratische pluraliteit en de autonomie van kunst.",
+      fr: "Interstice examine comment le « lien » est devenu un idéal normatif dans les politiques culturelles européennes, et ce que cela implique pour la pluralité démocratique et l’autonomie de l’art.",
     },
 
     intro: {
-      en: "In contemporary cultural discourse, ‘connection’ is often presented as an unquestioned good. This intervention questions that assumption.",
-      nl: "In het hedendaagse culturele discours wordt ‘verbinding’ vaak voorgesteld als een vanzelfsprekend goed. Deze interventie stelt die veronderstelling in vraag.",
-      fr: "Dans le discours culturel contemporain, le « lien » est souvent présenté comme un bien évident. Cette intervention en interroge le présupposé.",
+      en: "Across European cultural policy, ‘connection’ is increasingly presented as a social value to which art and culture can contribute. This intervention examines what is politically and artistically at stake in that expectation.",
+      nl: "In het Europese cultuurbeleid wordt ‘verbinding’ steeds nadrukkelijker als maatschappelijke waarde aan kunst en cultuur gekoppeld. Deze interventie onderzoekt wat daarbij politiek en artistiek op het spel staat.",
+      fr: "Dans les politiques culturelles européennes, le « lien » est de plus en plus présenté comme une valeur sociale à laquelle l’art et la culture sont appelés à contribuer. Cette intervention examine ce qui, politiquement et artistiquement, se joue dans cette attente.",
+    },
+
+    listingIntro: {
+      en: "An examination of how connection has become a democratic and cultural ideal, and of what is at stake when art is asked to reconcile social conflict.",
+
+      nl: "Een onderzoek naar hoe verbinding een democratisch en cultureel ideaal is geworden, en naar wat er op het spel staat wanneer van kunst wordt verwacht dat zij maatschappelijke tegenstellingen verzoent.",
+
+      fr: "Une analyse de la manière dont le lien est devenu un idéal démocratique et culturel, et de ce qui se joue lorsque l’on attend de l’art qu’il réconcilie les conflits sociaux.",
     },
 
     contextLabel: {
@@ -552,92 +568,253 @@ For the full text, see:
     },
 
     contextText: {
-      en: "Prompted by cultural programming that foregrounds ‘connection’ as a response to contemporary crises, and by the uncritical endorsement of this notion in public debate. This text forms part of a broader intervention that will be further developed.",
-      nl: "Aangezet door culturele programmatie waarin ‘verbinding’ als antwoord op hedendaagse crises wordt voorgesteld, en door de onkritische omarming van dit begrip in het publieke debat. Deze tekst maakt deel uit van een bredere interventie die verder zal worden uitgewerkt.",
-      fr: "Inspiré par des programmations culturelles qui présentent le « lien » comme réponse aux crises contemporaines, ainsi que par l’adhésion non critique à cette notion dans le débat public. Ce texte s’inscrit dans une intervention plus large qui sera développée ultérieurement.",
+      en: "This intervention takes as its point of departure the growing appeal to ‘connection’ in European cultural policy and a public debate in which culture was presented as a democratic counterforce to social division.",
+      nl: "Deze interventie vertrekt van het toenemende beroep op ‘verbinding’ in het Europese cultuurbeleid en van een publiek debat waarin cultuur als democratisch tegenwicht tegen maatschappelijke verdeeldheid werd voorgesteld.",
+      fr: "Cette intervention part du recours croissant au « lien » dans les politiques culturelles européennes et d’un débat public où la culture fut présentée comme un contrepoids démocratique aux divisions sociales.",
     },
 
     bibliographyLabel: {
-      en: "Notes",
-      nl: "Notities",
-      fr: "Notes",
+      en: "Sources and references",
+      nl: "Bronnen en referenties",
+      fr: "Sources et références",
     },
 
-    bodyHtml: {
-      en: `
-        <p>In recent years, “connection” has become a central term in cultural and political discourse. It is invoked as a remedy against fragmentation, polarization, and social anxiety. Culture, in particular, is increasingly called upon to “connect”.</p>
-
-        <p>This appeal appears self-evident. Yet it rests on an unexamined assumption: that connection is inherently emancipatory. This intervention challenges that assumption.</p>
-
-        <p>Not all forms of connection are politically neutral. On the contrary, connection can function as a powerful mechanism of alignment, normalization, and control. It can suppress conflict by framing disagreement as a failure of relation rather than as a structural or political antagonism.</p>
-
-        <p>Historically, reactionary and fascist movements have demonstrated a remarkable capacity to produce intense forms of collective attachment. They do not lack connection; they mobilize it. The problem is therefore not the absence of connection, but the forms it takes and the structures it reinforces.</p>
-
-        <p>When culture defines its role in terms of connection, it risks displacing conflict instead of articulating it. It risks transforming political contradictions into interpersonal deficits, and structural tensions into communicative problems.</p>
-
-        <p>A critical practice cannot be grounded in connection alone. It must be able to sustain disjunction, disagreement, and forms of non-relation. It must recognize that not everything can, or should, be reconciled.</p>
-
-        <p>Connection is not a solution in itself. It is a form that can either reproduce or contest existing structures of power. To treat it as an unquestioned good is to abandon critique at the very moment it is most needed.</p>
-
-        <p>This text marks a first articulation of a position that will be developed in subsequent interventions.</p>
-      `,
-
+    bibliographyHtml: {
       nl: `
-        <p>In de voorbije jaren is ‘verbinding’ een centraal begrip geworden in het culturele en politieke discours. Het wordt ingezet als remedie tegen fragmentatie, polarisatie en maatschappelijke onrust. Vooral van cultuur wordt verwacht dat zij “verbindt”.</p>
+    <ul>
+      <li>Theodor W. Adorno, <em>Ästhetische Theorie</em> (1970).</li>
+      <li>Theodor W. Adorno, <em>Negative Dialektik</em> (1966).</li>
+      <li>Hannah Arendt, <em>The Human Condition</em> (1958).</li>
+      <li>Alexis de Tocqueville, <em>De la démocratie en Amérique</em> (1835–1840).</li>
+      <li>Chantal Mouffe, <em>The Democratic Paradox</em> (2000) en <em>Agonistics</em> (2013).</li>
+      <li>Kristy Butler, “Vampiric Narratives: Constructing Authenticity in Bram Stoker’s Dracula”, <em>FORUM</em>, nr. 12 (2011).</li>
+      <li>Filmfestival Oostende, programma en toelichting bij Ruth Becquarts “De verhalen die ons verbinden”, FFO26.</li>
+      <li>VRT, <em>De Afspraak</em>, uitzending van 28 januari 2026.</li>
+      <li>United States Holocaust Memorial Museum, documentatie over cultuur, <em>Volksgemeinschaft</em> en cultuurpolitiek in het Derde Rijk.</li>
+      <li>Treccani, lemma over de <em>Opera Nazionale Dopolavoro</em>.</li>
+      <li>Ministère de la Culture (Frankrijk), <em>Culture et lien social</em>.</li>
+      <li>Initiative kulturelle Integration (Duitsland), <em>Zusammenhalt in Vielfalt</em>.</li>
+      <li>Ministerio de Cultura (Spanje), beleidsverklaringen over cultuur, territoriale verbondenheid en sociale cohesie.</li>
+      <li>Ministero della Cultura (Italië), <em>Cultura nei piccoli comuni</em>.</li>
+      <li>European Commission, <em>Culture Compass for Europe</em>.</li>
+    </ul>
+  `,
 
-        <p>Deze oproep lijkt vanzelfsprekend. Ze berust echter op een niet-geëxamineerde veronderstelling: dat verbinding op zich emancipatorisch is. Deze interventie stelt die veronderstelling in vraag.</p>
-
-        <p>Niet elke vorm van verbinding is politiek neutraal. Integendeel, verbinding kan functioneren als een krachtig mechanisme van afstemming, normalisering en controle. Ze kan conflict onderdrukken door meningsverschillen te herformuleren als een gebrek aan relatie, eerder dan als een structureel of politiek antagonisme.</p>
-
-        <p>Historisch gezien hebben reactionaire en fascistische bewegingen een opmerkelijk vermogen getoond om intense vormen van collectieve verbondenheid te produceren. Zij missen geen verbinding; zij mobiliseren haar. Het probleem is dus niet de afwezigheid van verbinding, maar de vormen die zij aanneemt en de structuren die zij versterkt.</p>
-
-        <p>Wanneer cultuur haar rol definieert in termen van verbinding, dreigt zij conflict te verplaatsen in plaats van het te articuleren. Politieke tegenstellingen worden dan herleid tot interpersoonlijke tekorten, en structurele spanningen tot communicatieproblemen.</p>
-
-        <p>Een kritische praktijk kan niet uitsluitend op verbinding berusten. Zij moet ruimte laten voor breuk, verschil en onverenigbaarheid. Niet alles kan, of moet, worden verzoend.</p>
-
-        <p>Verbinding is geen oplossing op zich. Het is een vorm die bestaande machtsstructuren kan reproduceren of juist bevragen. Haar als vanzelfsprekend goed beschouwen betekent de kritiek opgeven op het moment dat ze het meest nodig is.</p>
-
-        <p>Deze tekst vormt een eerste formulering van een positie die in volgende interventies verder zal worden uitgewerkt.</p>
-      `,
+      en: `
+    <ul>
+      <li>Theodor W. Adorno, <em>Ästhetische Theorie</em> (1970).</li>
+      <li>Theodor W. Adorno, <em>Negative Dialektik</em> (1966).</li>
+      <li>Hannah Arendt, <em>The Human Condition</em> (1958).</li>
+      <li>Alexis de Tocqueville, <em>De la démocratie en Amérique</em> (1835–1840).</li>
+      <li>Chantal Mouffe, <em>The Democratic Paradox</em> (2000) and <em>Agonistics</em> (2013).</li>
+      <li>Kristy Butler, “Vampiric Narratives: Constructing Authenticity in Bram Stoker’s Dracula”, <em>FORUM</em>, no. 12 (2011).</li>
+      <li>Filmfestival Oostende, programme and accompanying text for Ruth Becquart’s “De verhalen die ons verbinden” (“The stories that connect us”), FFO26.</li>
+      <li>VRT, <em>De Afspraak</em>, broadcast of 28 January 2026.</li>
+      <li>United States Holocaust Memorial Museum, documentation on culture, <em>Volksgemeinschaft</em> and cultural policy in the Third Reich.</li>
+      <li>Treccani, entry on the <em>Opera Nazionale Dopolavoro</em>.</li>
+      <li>Ministère de la Culture (France), <em>Culture et lien social</em>.</li>
+      <li>Initiative kulturelle Integration (Germany), <em>Zusammenhalt in Vielfalt</em>.</li>
+      <li>Ministerio de Cultura (Spain), policy statements on culture, territorial connectedness and social cohesion.</li>
+      <li>Ministero della Cultura (Italy), <em>Cultura nei piccoli comuni</em>.</li>
+      <li>European Commission, <em>Culture Compass for Europe</em>.</li>
+    </ul>
+  `,
 
       fr: `
-        <p>Ces dernières années, la notion de « lien » s’est imposée comme un terme central du discours culturel et politique. Elle est mobilisée comme remède à la fragmentation, à la polarisation et à l’anxiété sociale. La culture, en particulier, est appelée à « créer du lien ». </p>
-
-        <p>Cet appel paraît aller de soi. Il repose pourtant sur un présupposé rarement interrogé : que le lien serait en lui-même émancipateur. Cette intervention en questionne l’évidence.</p>
-
-        <p>Toutes les formes de lien ne sont pas politiquement neutres. Le lien peut fonctionner comme un mécanisme puissant d’alignement, de normalisation et de contrôle. Il peut neutraliser le conflit en transformant les désaccords en défauts de relation plutôt qu’en antagonismes structurels ou politiques.</p>
-
-        <p>Historiquement, les mouvements réactionnaires et fascistes ont démontré une capacité remarquable à produire des formes intenses d’attachement collectif. Ils ne manquent pas de lien ; ils le mobilisent. Le problème n’est donc pas l’absence de lien, mais les formes qu’il prend et les structures qu’il renforce.</p>
-
-        <p>Lorsque la culture définit son rôle en termes de lien, elle risque de déplacer le conflit au lieu de l’articuler. Les contradictions politiques deviennent alors des déficits interpersonnels, et les tensions structurelles des problèmes de communication.</p>
-
-        <p>Une pratique critique ne peut se fonder uniquement sur le lien. Elle doit pouvoir soutenir la disjonction, le désaccord et des formes de non-relation. Tout ne peut pas, ni ne doit, être réconcilié.</p>
-
-        <p>Le lien n’est pas une solution en soi. C’est une forme qui peut reproduire ou contester les structures de pouvoir existantes. Le traiter comme un bien évident revient à abandonner la critique au moment où elle est la plus nécessaire.</p>
-
-        <p>Ce texte constitue une première formulation d’une position qui sera développée dans des interventions ultérieures.</p>
-      `,
+    <ul>
+      <li>Theodor W. Adorno, <em>Ästhetische Theorie</em> (1970).</li>
+      <li>Theodor W. Adorno, <em>Negative Dialektik</em> (1966).</li>
+      <li>Hannah Arendt, <em>The Human Condition</em> (1958).</li>
+      <li>Alexis de Tocqueville, <em>De la démocratie en Amérique</em> (1835–1840).</li>
+      <li>Chantal Mouffe, <em>The Democratic Paradox</em> (2000) et <em>Agonistics</em> (2013).</li>
+      <li>Kristy Butler, “Vampiric Narratives: Constructing Authenticity in Bram Stoker’s Dracula”, <em>FORUM</em>, no 12 (2011).</li>
+      <li>Filmfestival Oostende, programme et texte de présentation autour de « De verhalen die ons verbinden » (« Les histoires qui nous relient ») de Ruth Becquart, FFO26.</li>
+      <li>VRT, <em>De Afspraak</em>, émission du 28 janvier 2026.</li>
+      <li>United States Holocaust Memorial Museum, documentation sur la culture, la <em>Volksgemeinschaft</em> et la politique culturelle du Troisième Reich.</li>
+      <li>Treccani, entrée consacrée à l’<em>Opera Nazionale Dopolavoro</em>.</li>
+      <li>Ministère de la Culture (France), <em>Culture et lien social</em>.</li>
+      <li>Initiative kulturelle Integration (Allemagne), <em>Zusammenhalt in Vielfalt</em>.</li>
+      <li>Ministerio de Cultura (Espagne), déclarations de politique culturelle sur la cohésion territoriale et sociale.</li>
+      <li>Ministero della Cultura (Italie), <em>Cultura nei piccoli comuni</em>.</li>
+      <li>Commission européenne, <em>Culture Compass for Europe</em>.</li>
+    </ul>
+  `,
     },
 
-    marginalia: [
+    bodyBlocks: [
       {
-        id: "m1",
-        anchorParagraph: 3,
-        text: {
-          en: "Connection can be a technique of control.",
-          nl: "Verbinding kan een techniek van controle zijn.",
-          fr: "Le lien peut être une technique de contrôle.",
+        id: "b1",
+        html: {
+          nl: `
+        <p>In het Europese cultuurbeleid heeft zich de voorbije jaren een opvallend eensluidend vocabularium gevestigd. Cultuur moet mensen verbinden, sociale cohesie versterken, polarisering tegengaan, bruggen slaan tussen gemeenschappen en de democratische weerbaarheid vergroten. In Frankrijk wordt cultuur als hefboom voor <em>lien social</em> ingezet; in Duitsland wordt zij verbonden met <em>Zusammenhalt in Vielfalt</em>; in Spanje en Italië verschijnt zij in vergelijkbare termen als instrument van sociale cohesie; ook op Europees niveau wordt cultuur steeds nadrukkelijker voorgesteld als een kracht van verbondenheid, veerkracht en democratie. De politieke bedoelingen achter dit discours zijn doorgaans herkenbaar en vaak sympathiek. Juist daarom valt nauwelijks nog op welke stilzwijgende veronderstellingen eraan ten grondslag liggen. ‘Verbinding’ functioneert er niet alleen als beschrijving van een mogelijk effect van culturele praktijken, maar steeds vaker als een vooraf gegeven maatschappelijke waarde — alsof meer verbinding vanzelf ook meer democratie betekent.</p>
+
+        <p>Hoe gemakkelijk die gelijkstelling tot stand komt, werd op 28 januari 2026 bijna exemplarisch zichtbaar in <em>De Afspraak</em>, een debatprogramma van de Nederlandstalige Belgische openbare omroep VRT. Geert Mak, Nederlands schrijver en historisch verslaggever, en Christophe Busch, directeur van het Hannah Arendt Instituut en onderzoeker van collectief geweld, bespraken er de autoritaire ontwikkelingen in de Verenigde Staten. Mak omschreef die ontwikkelingen als een fascistisch proces dat een mogelijk <em>point of no return</em> naderde; Busch verbond een dergelijk kantelpunt onder meer met de mogelijkheid dat de komende verkiezingen zouden worden gemanipuleerd, verhinderd of uitgesteld. Hun vergelijking met het Europese fascisme van de twintigste eeuw was niet zonder nuances. Zij wezen ook op verschillen tussen beide historische constellaties en op de mogelijke weerstand van rechters, deelstaten en andere democratische instituties. Later in dezelfde uitzending presenteerde actrice en auteur Ruth Becquart het programma van Filmfestival Oostende onder het teken van ‘de verhalen die ons verbinden’. Film en cultuur verschenen daarbij als krachten die empathie kunnen opwekken, mensen kunnen samenbrengen en maatschappelijke verdeeldheid kunnen tegengaan; de andere tafelgasten verwelkomden die gedachte zonder merkbare reserve. Opmerkelijk is niet dat zij waarde hechtten aan culturele ontmoeting, maar hoe moeiteloos de analyse van fascisme overging in een pleidooi voor verbinding door middel van cultuur. Waar democratische weerbaarheid eerst nog werd verbonden met instituties, tegenmachten en blijvend politiek conflict, verscheen zij vervolgens als een kwestie van maatschappelijke samenhang — alsof het vermogen mensen te verenigen vanzelf aan de democratische zijde staat.</p>
+      `,
+
+          en: `
+        <p>Within European cultural policy, a strikingly uniform vocabulary has taken hold in recent years. Culture is expected to connect people, strengthen social cohesion, counter polarization, build bridges between communities and enhance democratic resilience. In France, culture is deployed as a lever for <em>lien social</em>; in Germany it is associated with <em>Zusammenhalt in Vielfalt</em>; in Spain and Italy it appears in similar terms as an instrument of social cohesion; at the European level, too, culture is increasingly presented as a force of connectedness, resilience and democracy. The political intentions behind this discourse are generally understandable and often sympathetic. Precisely for that reason, the tacit assumptions underlying it are easily overlooked. ‘Connection’ functions not only as a description of a possible effect of cultural practices, but increasingly as a social value taken for granted in advance — as though more connection automatically meant more democracy.</p>
+
+        <p>How readily that equation can be established became almost paradigmatically visible on 28 January 2026 in <em>De Afspraak</em>, a debate programme on the Dutch-language Belgian public broadcaster VRT. Geert Mak, a Dutch writer and historical chronicler, and Christophe Busch, director of the Hannah Arendt Institute and a researcher of collective violence, discussed the authoritarian developments in the United States. Mak described these developments as a fascist process approaching a possible <em>point of no return</em>; Busch associated such a tipping point, among other things, with the possibility that the forthcoming elections might be manipulated, obstructed or postponed. Their comparison with twentieth-century European fascism was not without nuance. They also pointed to differences between the two historical constellations and to the possible resistance of judges, individual states and other democratic institutions. Later in the same broadcast, actress and writer Ruth Becquart presented the programme of Filmfestival Oostende under the heading ‘the stories that connect us’. Film and culture appeared as forces capable of generating empathy, bringing people together and counteracting social division; the other guests welcomed the idea without noticeable reservation. What is striking is not that they valued cultural encounter, but how effortlessly the analysis of fascism gave way to a plea for connection through culture. Whereas democratic resilience had first been linked to institutions, countervailing powers and enduring political conflict, it subsequently appeared as a matter of social cohesion — as though the capacity to unite people were automatically on the side of democracy.</p>
+      `,
+
+          fr: `
+        <p>Dans les politiques culturelles européennes, un vocabulaire remarquablement homogène s’est imposé au cours des dernières années. La culture doit créer du lien, renforcer la cohésion sociale, lutter contre la polarisation, jeter des ponts entre les communautés et accroître la résilience démocratique. En France, la culture est mobilisée comme levier de <em>lien social</em> ; en Allemagne, elle est associée au <em>Zusammenhalt in Vielfalt</em> ; en Espagne et en Italie, elle apparaît dans des termes comparables comme instrument de cohésion sociale ; au niveau européen également, la culture est de plus en plus présentée comme une force de lien, de résilience et de démocratie. Les intentions politiques qui sous-tendent ce discours sont généralement compréhensibles et souvent sympathiques. C’est précisément pourquoi les présupposés tacites sur lesquels il repose passent si facilement inaperçus. Le « lien » ne fonctionne plus seulement comme la description d’un effet possible des pratiques culturelles, mais de plus en plus comme une valeur sociale donnée d’avance — comme si davantage de lien signifiait automatiquement davantage de démocratie.</p>
+
+        <p>La facilité avec laquelle cette équivalence peut s’établir est apparue de manière presque exemplaire le 28 janvier 2026 dans <em>De Afspraak</em>, une émission de débat de la chaîne publique belge néerlandophone VRT. Geert Mak, écrivain néerlandais et chroniqueur de l’histoire contemporaine, et Christophe Busch, directeur de l’Institut Hannah Arendt et chercheur sur la violence collective, y discutaient des évolutions autoritaires aux États-Unis. Mak décrivait ces évolutions comme un processus fasciste approchant un possible <em>point of no return</em> ; Busch associait notamment un tel point de bascule à la possibilité que les prochaines élections soient manipulées, empêchées ou reportées. Leur comparaison avec les fascismes européens du XXe siècle n’était pas dépourvue de nuances. Ils soulignaient également les différences entre les deux constellations historiques ainsi que la résistance possible des juges, des États fédérés et d’autres institutions démocratiques. Plus tard dans la même émission, l’actrice et autrice Ruth Becquart présenta le programme du Filmfestival Oostende sous le signe des « histoires qui nous relient ». Le film et la culture y apparurent comme des forces capables de susciter l’empathie, de rapprocher les individus et de contrer les divisions sociales ; les autres invités accueillirent cette idée sans réserve perceptible. Ce qui frappe n’est pas qu’ils aient accordé de la valeur à la rencontre culturelle, mais la facilité avec laquelle l’analyse du fascisme céda la place à un plaidoyer pour le lien par la culture. Alors que la résilience démocratique avait d’abord été rapportée aux institutions, aux contre-pouvoirs et à la persistance du conflit politique, elle apparut ensuite comme une question de cohésion sociale — comme si la capacité à réunir les individus se situait d’elle-même du côté démocratique.</p>
+      `,
         },
       },
+
       {
-        id: "m2",
-        anchorParagraph: 5,
-        text: {
-          en: "Not every conflict is a failure of relation.",
-          nl: "Niet elk conflict is een relationeel falen.",
-          fr: "Tout conflit n’est pas un échec relationnel.",
+        id: "b2",
+        html: {
+          nl: `
+        <p>De twintigste eeuw levert voor die vanzelfsprekendheid een ongemakkelijke tegenproef. De fascistische bewegingen van die periode waren niet alleen ongeëvenaard in hun vermogen mensen uit te sluiten, te vervolgen en te vernietigen; ze waren eveneens uitzonderlijk krachtige machines van maatschappelijke integratie, collectieve identificatie en culturele gemeenschapsvorming. In het nationaalsocialisme kreeg die beweging haar meest radicale vorm in het ideaal van de <em>Volksgemeinschaft</em>: sociale, politieke en culturele verschillen moesten worden ondergeschikt gemaakt aan de voorstelling van één raciaal gedefinieerd volk. Verbinding en uitsluiting waren daarbij geen tegengestelde processen. De gemeenschap werd mede gevormd door te bepalen wie er niet toe behoorde. Cultuur speelde daarin geen bijkomstige rol. Via de <em>Gleichschaltung</em> werden culturele instellingen, beroepsorganisaties, muziek, film, theater, literatuur en beeldende kunst in overeenstemming gebracht met de doelstellingen van het regime; de <em>Reichskulturkammer</em> bepaalde mee wie binnen het culturele leven kon werken, terwijl de tentoonstelling <em>Entartete Kunst</em> zichtbaar maakte welke kunst buiten de gewenste culturele orde werd geplaatst. Het fascistische Italië ontwikkelde een verwante logica. De <em>Opera Nazionale Dopolavoro</em> bracht culturele, sportieve en recreatieve verenigingen samen onder regimecontrole en maakte van vrijetijdsbesteding een instrument van maatschappelijke integratie en politieke inbedding. De relevante vraag is daarom niet of cultuur kan verbinden. Dat kan zij ongetwijfeld. De vraag is welke gemeenschap zij vormt, rond welke beelden en verhalen, welke verschillen daarin kunnen blijven bestaan — en wie of wat buiten die gemeenschap terechtkomt.</p>
+      `,
+
+          en: `
+        <p>The twentieth century provides an uncomfortable counter-test to that assumption. The fascist movements of the period were not only unparalleled in their capacity to exclude, persecute and destroy people; they were also exceptionally powerful machines of social integration, collective identification and cultural community-building. Under National Socialism, this movement found its most radical form in the ideal of the <em>Volksgemeinschaft</em>: social, political and cultural differences were to be subordinated to the image of a single racially defined people. Connection and exclusion were not opposing processes. The community was formed in part by determining who did not belong to it. Culture played no secondary role in this. Through <em>Gleichschaltung</em>, cultural institutions, professional organizations, music, film, theatre, literature and the visual arts were brought into line with the objectives of the regime; the <em>Reichskulturkammer</em> helped determine who was permitted to work within cultural life, while the exhibition <em>Entartete Kunst</em> made visible which art was placed outside the desired cultural order. Fascist Italy developed a related logic. The <em>Opera Nazionale Dopolavoro</em> brought cultural, sporting and recreational associations together under regime control and turned leisure into an instrument of social integration and political incorporation. The relevant question, therefore, is not whether culture can connect. It undoubtedly can. The question is what kind of community it forms, around which images and narratives, which differences can continue to exist within it — and who or what ends up outside that community.</p>
+      `,
+
+          fr: `
+        <p>Le XXe siècle fournit à cette évidence une contre-épreuve dérangeante. Les mouvements fascistes de cette période ne furent pas seulement sans équivalent dans leur capacité à exclure, persécuter et détruire ; ils furent également des machines exceptionnellement puissantes d’intégration sociale, d’identification collective et de formation culturelle de la communauté. Sous le national-socialisme, ce mouvement trouva sa forme la plus radicale dans l’idéal de la <em>Volksgemeinschaft</em> : les différences sociales, politiques et culturelles devaient être subordonnées à la représentation d’un peuple unique défini racialement. Lien et exclusion n’étaient pas des processus opposés. La communauté se constituait aussi en déterminant qui n’en faisait pas partie. La culture n’y jouait nullement un rôle secondaire. Par la <em>Gleichschaltung</em>, les institutions culturelles, les organisations professionnelles, la musique, le cinéma, le théâtre, la littérature et les arts visuels furent alignés sur les objectifs du régime ; la <em>Reichskulturkammer</em> contribuait à déterminer qui pouvait travailler dans le champ culturel, tandis que l’exposition <em>Entartete Kunst</em> rendait visible l’art placé hors de l’ordre culturel souhaité. L’Italie fasciste développa une logique apparentée. L’<em>Opera Nazionale Dopolavoro</em> rassembla sous le contrôle du régime des associations culturelles, sportives et récréatives, faisant des loisirs un instrument d’intégration sociale et d’encadrement politique. La question pertinente n’est donc pas de savoir si la culture peut créer du lien. Elle le peut sans aucun doute. La question est de savoir quelle communauté elle forme, autour de quelles images et de quels récits, quelles différences peuvent y subsister — et qui ou quoi se retrouve hors de cette communauté.</p>
+      `,
+        },
+      },
+
+      {
+        id: "b3",
+        html: {
+          nl: `
+        <p>Alexis de Tocqueville zag in de negentiende eeuw al dat democratie niet alleen wordt bedreigd door een macht boven de samenleving, maar ook door de mogelijkheid dat de meerderheid zichzelf met het geheel vereenzelvigt. Tegen die ‘tirannie van de meerderheid’ stelde hij geen ideaal van consensus, maar een dicht weefsel van instituties, lokale autonomie, vrije associaties en publieke tegenkrachten waarin maatschappelijke macht zich kan verspreiden en begrenzen.</p>
+
+        <p>Als verbinding op zichzelf geen democratische norm vormt, rijst de vraag wat democratische gemeenschapsvorming dan wel onderscheidt van haar autoritaire tegenvormen. Het antwoord ligt niet in een sterkere eenheid, maar in het vermogen verschillen te laten voortbestaan zonder ze in vijandschap te laten omslaan. Bij Hannah Arendt is pluraliteit geen hinderpaal voor het politieke, maar juist een van zijn voorwaarden: mensen delen een wereld zonder daarom vanuit hetzelfde standpunt te spreken of te handelen. Het gemeenschappelijke ontstaat niet doordat verschillen verdwijnen, maar doordat zij binnen een publieke ruimte naast elkaar kunnen verschijnen. Zo’n ruimte bestaat echter niet vanzelf. Zij moet politiek worden opgebouwd en beschermd door instituties die verhinderen dat één positie zich met het geheel kan vereenzelvigen.</p>
+
+        <p>Chantal Mouffe maakt die institutionele dimensie nog explicieter. Democratie veronderstelt volgens haar niet dat fundamentele tegenstellingen uiteindelijk in consensus kunnen worden opgelost; zij vereist praktijken en instituties die antagonismen zo vormgeven dat politieke tegenstanders elkaar niet als uit te schakelen vijanden, maar als legitieme opponenten blijven erkennen. Rechtspraak, parlementaire procedures, verkiezingen, machtsverdeling en andere institutionele tegenwichten zijn vanuit dat perspectief geen uitwendige waarborgen van een reeds bestaande democratische gemeenschap: zij behoren tot de mechanismen waardoor politieke verdeeldheid democratisch kan blijven functioneren. Maatschappelijk conflict is dan niet zonder meer een tekort waaraan cultuur een einde moet maken. Het kan ook het zichtbare teken zijn van een pluraliteit die democratisch moet worden georganiseerd, begrensd en uitgehouden. Het onderscheid tussen democratische en autoritaire politiek ligt dan minder in de hoeveelheid verbinding die zij produceren dan in de vraag of verschil, conflict en tegenspraak binnen de gemeenschap institutioneel kunnen blijven bestaan zonder te worden geneutraliseerd of uitgestoten.</p>
+      `,
+
+          en: `
+        <p>Already in the nineteenth century, Alexis de Tocqueville saw that democracy is threatened not only by a power standing above society, but also by the possibility that the majority might identify itself with the whole. Against this ‘tyranny of the majority’, he did not set an ideal of consensus, but a dense fabric of institutions, local autonomy, voluntary associations and public counterforces through which social power can be dispersed and limited.</p>
+
+        <p>If connection is not in itself a democratic norm, the question arises as to what distinguishes democratic forms of community from their authoritarian counterparts. The answer does not lie in stronger unity, but in the capacity to allow differences to persist without letting them turn into enmity. For Hannah Arendt, plurality is not an obstacle to the political but one of its conditions: people share a world without therefore speaking or acting from the same standpoint. The common world does not arise because differences disappear, but because they can appear alongside one another within a public space. Such a space does not exist by itself. It must be politically constructed and protected by institutions that prevent any one position from identifying itself with the whole.</p>
+
+        <p>Chantal Mouffe makes this institutional dimension even more explicit. Democracy, in her account, does not presuppose that fundamental oppositions can ultimately be resolved in consensus; it requires practices and institutions that shape antagonisms in such a way that political opponents continue to recognize one another not as enemies to be eliminated but as legitimate adversaries. Courts, parliamentary procedures, elections, the distribution of power and other institutional counterweights are, from this perspective, not external safeguards of an already existing democratic community: they belong to the mechanisms through which political division can continue to function democratically. Social conflict is therefore not necessarily a deficiency that culture must overcome. It can also be the visible sign of a plurality that must be democratically organized, bounded and sustained. The distinction between democratic and authoritarian politics then lies less in the amount of connection they produce than in whether difference, conflict and dissent can continue to exist institutionally within the community without being neutralized or expelled.</p>
+      `,
+
+          fr: `
+        <p>Alexis de Tocqueville voyait déjà au XIXe siècle que la démocratie n’est pas seulement menacée par un pouvoir situé au-dessus de la société, mais aussi par la possibilité que la majorité s’identifie elle-même au tout. À cette « tyrannie de la majorité », il n’opposait pas un idéal de consensus, mais un tissu dense d’institutions, d’autonomie locale, d’associations libres et de contre-pouvoirs publics permettant au pouvoir social de se disperser et de se limiter.</p>
+
+        <p>Si le lien ne constitue pas en lui-même une norme démocratique, la question se pose de savoir ce qui distingue alors la formation démocratique d’une communauté de ses formes autoritaires. La réponse ne réside pas dans une unité plus forte, mais dans la capacité à laisser subsister les différences sans les laisser basculer dans l’inimitié. Chez Hannah Arendt, la pluralité n’est pas un obstacle au politique, mais l’une de ses conditions : les êtres humains partagent un monde sans pour autant parler ou agir depuis le même point de vue. Le commun ne naît pas de la disparition des différences, mais de leur possibilité d’apparaître côte à côte dans un espace public. Or un tel espace n’existe pas de lui-même. Il doit être politiquement construit et protégé par des institutions empêchant qu’une position particulière puisse s’identifier au tout.</p>
+
+        <p>Chantal Mouffe rend cette dimension institutionnelle encore plus explicite. Selon elle, la démocratie ne suppose pas que les oppositions fondamentales puissent finalement se résoudre dans le consensus ; elle exige des pratiques et des institutions capables de donner forme aux antagonismes de telle sorte que les adversaires politiques continuent à se reconnaître non comme des ennemis à éliminer, mais comme des adversaires légitimes. La justice, les procédures parlementaires, les élections, la répartition des pouvoirs et les autres contrepoids institutionnels ne sont, dans cette perspective, pas des garanties extérieures à une communauté démocratique déjà constituée : ils font partie des mécanismes par lesquels la division politique peut continuer à fonctionner démocratiquement. Le conflit social n’est donc pas nécessairement un manque auquel la culture devrait mettre fin. Il peut aussi être le signe visible d’une pluralité qu’il faut organiser, encadrer et soutenir démocratiquement. La différence entre politique démocratique et politique autoritaire réside alors moins dans la quantité de lien qu’elles produisent que dans la possibilité pour la différence, le conflit et la contestation de continuer à exister institutionnellement au sein de la communauté sans être neutralisés ou rejetés.</p>
+      `,
+        },
+      },
+
+      {
+        id: "b4",
+        html: {
+          nl: `
+        <p>Een van de films waarmee Filmfestival Oostende zijn programma rond verbinding illustreert, maakt ironisch genoeg zichtbaar waarom dat begrip te weinig zegt. <em>Bram Stoker’s Dracula</em> kan ongetwijfeld een gemeenschappelijke ervaring produceren: in een filmzaal wordt ook het griezelen gedeeld, en juist de gelijktijdige confrontatie met angst en afschuw kan tijdelijk een publiek vormen. Maar daarmee is nog weinig gezegd over de politieke betekenis van die verbinding. Interessanter is wat de film zelf met grenzen en identiteiten doet. In een Žižekiaans geïnspireerde lezing verschijnt Dracula als een figuur die zich niet stabiel laat onderbrengen in de tegenstellingen waarop een orde steunt: levend en dood, eigen en vreemd, aantrekking en afstoting. De vampier is geen element dat uiteindelijk harmonieus in een gemeenschap wordt opgenomen, maar een hardnekkige rest die haar grenzen juist zichtbaar en instabiel maakt. <em>Gothic</em> fictie kan zo een ruimte openen waarin tegenstrijdige posities niet noodzakelijk worden verzoend, maar naast elkaar blijven bestaan en elkaar ontregelen. Misschien ligt precies daarin een andere politieke mogelijkheid van kunst: niet alleen in haar vermogen een gedeeld affect voort te brengen, maar in haar vermogen ons te confronteren met wat zich niet zonder rest in een gemeenschappelijk verhaal laat opnemen.</p>
+      `,
+
+          en: `
+        <p>One of the films with which Filmfestival Oostende illustrates its programme around connection ironically reveals why the concept says too little. <em>Bram Stoker’s Dracula</em> can undoubtedly produce a shared experience: in a cinema, fear itself is shared, and the simultaneous confrontation with fear and horror can temporarily constitute a public. But this still tells us little about the political meaning of that connection. More interesting is what the film itself does with boundaries and identities. In a Žižek-inspired reading, Dracula appears as a figure who cannot be stably contained within the oppositions on which an order rests: living and dead, familiar and foreign, attraction and repulsion. The vampire is not an element ultimately absorbed harmoniously into a community, but a persistent remainder that makes its boundaries visible and unstable. <em>Gothic</em> fiction can thus open a space in which conflicting positions are not necessarily reconciled, but continue to coexist and unsettle one another. Perhaps precisely here lies a different political possibility of art: not only in its capacity to produce a shared affect, but in its capacity to confront us with what cannot be incorporated without remainder into a common narrative.</p>
+      `,
+
+          fr: `
+        <p>L’un des films par lesquels le Filmfestival Oostende illustre son programme autour du lien montre ironiquement pourquoi ce concept ne suffit pas. <em>Bram Stoker’s Dracula</em> peut sans aucun doute produire une expérience commune : dans une salle de cinéma, la peur elle-même est partagée, et la confrontation simultanée à la peur et à l’effroi peut temporairement constituer un public. Mais cela nous dit encore peu de chose sur la signification politique de ce lien. Plus intéressant est ce que le film lui-même fait aux frontières et aux identités. Dans une lecture inspirée de Žižek, Dracula apparaît comme une figure qui ne peut être assignée de manière stable aux oppositions sur lesquelles repose un ordre : vivant et mort, familier et étranger, attraction et répulsion. Le vampire n’est pas un élément finalement intégré de manière harmonieuse à une communauté, mais un reste obstiné qui rend ses frontières visibles et instables. La fiction <em>gothic</em> peut ainsi ouvrir un espace dans lequel des positions contradictoires ne sont pas nécessairement réconciliées, mais continuent de coexister et de se déstabiliser mutuellement. Peut-être est-ce précisément là que réside une autre possibilité politique de l’art : non seulement dans sa capacité à produire un affect partagé, mais dans sa capacité à nous confronter à ce qui ne peut être intégré sans reste dans un récit commun.</p>
+      `,
+        },
+      },
+
+      {
+        id: "b5",
+        html: {
+          nl: `
+        <p>Dat brengt ons van de politieke betekenis van verbinding naar de positie van de kunst zelf. Het hedendaagse discours spreekt gemakkelijk over ‘cultuur’ alsof daarmee één samenhangend maatschappelijk instrument wordt aangeduid, terwijl culturele praktijken, gemeenschapsvorming en artistieke productie niet zonder meer samenvallen. Voor Adorno is kunst allerminst van de samenleving afgesloten: zij ontstaat binnen maatschappelijke verhoudingen en draagt hun tegenstellingen in zich. Haar kritische mogelijkheid berust echter juist op een relatieve autonomie tegenover maatschappelijke functies en doeleinden. Kunst kan verbinden, inzicht voortbrengen, politieke gevoeligheid veranderen of bestaande gemeenschappen ontregelen; problematisch wordt het wanneer zulke mogelijke werkingen normatief worden vastgelegd als datgene waaraan haar maatschappelijke betekenis wordt afgemeten. De nationaalsocialistische cultuurpolitiek laat in extreme vorm zien wat er gebeurt wanneer maatschappelijke doelstellingen het criterium worden waaraan kunst wordt beoordeeld.</p>
+
+        <p>Het probleem beperkt zich bovendien niet tot het hedendaagse vocabularium van sociale cohesie. In een <a href="/nl/interventions/christophe-van-gerrewey-de-witte-raaf-response">eerdere interventie</a> wees <em>Interstice</em> op een verwante beweging in het editoriaal ‘Wat heet denken?’ van het Nederlandstalige kunsttijdschrift <em>De Witte Raaf</em>. Daar werden kunst en cultuur opgenomen in een programma van ‘beter denken’ dat een ‘beter leven’ binnen bereik moest brengen — opmerkelijk genoeg met Adorno als een van de filosofische autoriteiten. Waar de doelstelling verschilt — intellectuele verbetering daar, maatschappelijke verbinding hier — vertoont de formele beweging een duidelijke verwantschap: aan kunst wordt een maatschappelijk potentieel toegeschreven dat vervolgens in de richting van een gewenste uitkomst wordt gelezen. Dat kunst mensen kan verbinden of het denken kan veranderen, verleent haar onmiskenbaar maatschappelijke betekenis. Wanneer zulke mogelijke effecten echter als normatieve verwachting de benadering van kunst vooraf structureren, wordt zij van meet af aan onder een heteronoom criterium gelezen. Juist waar kunst zich niet volledig laat reduceren tot zulke verwachtingen, kan iets zichtbaar worden van wat Adorno het niet-identieke noemt: wat zich niet restloos laat opnemen in onze begrippen, functies en verwachtingen.</p>
+
+        <p>Daar raakt het niet-identieke aan Adorno’s opvatting van de autonomie van kunst. Voor zover aan kunst überhaupt een maatschappelijke functie kan worden toegeschreven, ligt die paradoxaal genoeg in haar functieloosheid: in het feit dat zij zich niet volledig laat onderwerpen aan de doeleinden en gebruiksvormen van de maatschappelijke orde waarvan zij tegelijk deel uitmaakt. Precies daardoor kan zij als ‘sociale antithese van de samenleving’ optreden. Haar maatschappelijke kracht ligt niet in het beantwoorden aan een normatief interpretatiekader, maar juist in haar vermogen zich daaraan te onttrekken en zichtbaar te maken wat zich binnen de bestaande maatschappelijke orde niet zonder rest laat identificeren.</p>
+      `,
+
+          en: `
+        <p>This brings us from the political meaning of connection to the position of art itself. Contemporary discourse readily speaks of ‘culture’ as though it denoted a single coherent social instrument, even though cultural practices, community-building and artistic production do not simply coincide. For Adorno, art is by no means sealed off from society: it arises within social relations and carries their contradictions within itself. Yet its critical potential rests precisely on a relative autonomy vis-à-vis social functions and ends. Art can connect, generate insight, alter political sensibilities or unsettle existing communities; the problem arises when such possible effects are normatively fixed as that against which its social significance is measured. National Socialist cultural policy shows in extreme form what happens when social objectives become the criterion by which art is judged.</p>
+
+        <p>The problem, moreover, is not confined to the contemporary vocabulary of social cohesion. In an <a href="/en/interventions/christophe-van-gerrewey-de-witte-raaf-response">earlier intervention</a>, <em>Interstice</em> pointed to a related movement in the editorial ‘What is called thinking?’ in the Dutch-language art journal <em>De Witte Raaf</em>. There, art and culture were incorporated into a programme of ‘better thinking’ that was to bring a ‘better life’ within reach — remarkably, with Adorno as one of its philosophical authorities. Where the aim differs — intellectual improvement there, social connection here — the formal movement shows a clear affinity: a social potential is attributed to art and subsequently read in the direction of a desired outcome. That art can connect people or change thought gives it undeniable social significance. When such possible effects, however, structure our approach to art in advance as normative expectations, art is read from the outset according to a heteronomous criterion. Precisely where art cannot be fully reduced to such expectations, something may become visible of what Adorno calls the non-identical: that which cannot be absorbed without remainder into our concepts, functions and expectations.</p>
+
+        <p>Here, the non-identical intersects with Adorno’s conception of the autonomy of art. To the extent that art can be said to have a social function at all, that function lies paradoxically in its functionlessness: in the fact that it cannot be fully subordinated to the ends and forms of use of the social order of which it is nevertheless a part. Precisely for this reason it can act as the ‘social antithesis of society’. Its social force lies not in answering to a normative interpretive framework, but in its capacity to withdraw from it and render visible what, within the existing social order, resists identification without remainder.</p>
+      `,
+
+          fr: `
+        <p>Cela nous conduit de la signification politique du lien à la position de l’art lui-même. Le discours contemporain parle volontiers de « culture » comme s’il s’agissait d’un instrument social unique et cohérent, alors que pratiques culturelles, formation de communautés et production artistique ne coïncident nullement. Chez Adorno, l’art n’est en rien séparé de la société : il naît au sein des rapports sociaux et porte en lui leurs contradictions. Sa possibilité critique repose pourtant précisément sur une autonomie relative vis-à-vis des fonctions et des finalités sociales. L’art peut créer du lien, produire de la connaissance, modifier les sensibilités politiques ou déstabiliser des communautés existantes ; le problème apparaît lorsque de tels effets possibles sont normativement fixés comme ce à l’aune de quoi sa signification sociale est mesurée. La politique culturelle national-socialiste montre, sous une forme extrême, ce qui se produit lorsque des objectifs sociaux deviennent le critère à partir duquel l’art est jugé.</p>
+
+        <p>Le problème ne se limite d’ailleurs pas au vocabulaire contemporain de la cohésion sociale. Dans une <a href="/fr/interventions/christophe-van-gerrewey-de-witte-raaf-response">intervention antérieure</a>, <em>Interstice</em> a mis en évidence un mouvement apparenté dans l’éditorial « Qu’appelle-t-on penser ? » de la revue d’art néerlandophone <em>De Witte Raaf</em>. L’art et la culture y étaient intégrés dans un programme de « mieux penser » censé mettre une « vie meilleure » à portée de main — fait remarquable, avec Adorno parmi les autorités philosophiques mobilisées. Si l’objectif diffère — amélioration intellectuelle là, lien social ici — le mouvement formel présente une nette parenté : un potentiel social est attribué à l’art, puis lu dans la direction d’un résultat souhaité. Que l’art puisse créer du lien ou transformer la pensée lui confère indéniablement une signification sociale. Mais lorsque de tels effets possibles structurent d’avance, comme attentes normatives, notre approche de l’art, celui-ci se trouve d’emblée lu selon un critère hétéronome. C’est précisément là où l’art ne se laisse pas entièrement réduire à de telles attentes que peut apparaître quelque chose de ce qu’Adorno appelle le non-identique : ce qui ne se laisse pas absorber sans reste dans nos concepts, nos fonctions et nos attentes.</p>
+
+        <p>C’est ici que le non-identique rejoint la conception adornienne de l’autonomie de l’art. Pour autant que l’on puisse attribuer à l’art une fonction sociale, celle-ci réside paradoxalement dans son absence de fonction : dans le fait qu’il ne se laisse pas entièrement soumettre aux finalités et aux usages de l’ordre social dont il fait pourtant partie. C’est précisément ainsi qu’il peut agir comme « antithèse sociale de la société ». Sa force sociale ne réside pas dans sa conformité à un cadre interprétatif normatif, mais dans sa capacité à s’y soustraire et à rendre visible ce qui, au sein de l’ordre social existant, résiste à toute identification sans reste.</p>
+      `,
+        },
+      },
+
+      {
+        id: "b6",
+        html: {
+          nl: `
+        <p>Tegen deze achtergrond krijgt de opmerkelijke eensgezindheid binnen het hedendaagse Europese cultuurbeleid een ander gewicht. De Franse overheid noemt artistieke en culturele praktijken expliciet krachtige hefbomen van <em>cohésion sociale</em>; in Duitsland onderzoekt de door de federale overheid ondersteunde <em>Initiative kulturelle Integration</em> onder het motto <em>Zusammenhalt in Vielfalt</em> hoe cultuur het samenleven in een plurale samenleving kan bevorderen; in Spanje wordt cultuur door het ministerie voorgesteld als een as van territoriale verbondenheid en sociale cohesie; een recent Italiaans programma omschrijft cultuur uitdrukkelijk als instrument om sociale cohesie en burgerparticipatie te versterken. Ook de Europese Unie koppelt cultuur in haar <em>Culture Compass</em> rechtstreeks aan veerkracht, sociale en territoriale cohesie en democratische ontwikkeling. Opmerkelijk is niet dat deze beleidsprogramma’s identiek zouden zijn — dat zijn ze niet — maar dat uiteenlopende politieke en culturele tradities steeds opnieuw bij een vergelijkbare verwachting uitkomen: cultuur wordt aangesproken op het vermogen samenhang, wederzijds begrip, participatie, weerbaarheid en een gedeelde publieke wereld mede te produceren.</p>
+      `,
+
+          en: `
+        <p>Against this background, the striking convergence within contemporary European cultural policy takes on a different weight. The French government explicitly describes artistic and cultural practices as powerful levers of <em>cohésion sociale</em>; in Germany, the federally supported <em>Initiative kulturelle Integration</em>, under the motto <em>Zusammenhalt in Vielfalt</em>, explores how culture can foster coexistence within a plural society; in Spain, culture is presented by the ministry as an axis of territorial connectedness and social cohesion; a recent Italian programme explicitly describes culture as an instrument for strengthening social cohesion and civic participation. The European Union likewise links culture in its <em>Culture Compass</em> directly to resilience, social and territorial cohesion and democratic development. What is striking is not that these policy programmes are identical — they are not — but that different political and cultural traditions repeatedly converge on a comparable expectation: culture is called upon to help produce cohesion, mutual understanding, participation, resilience and a shared public world.</p>
+      `,
+
+          fr: `
+        <p>Dans cette perspective, la remarquable convergence qui traverse aujourd’hui les politiques culturelles européennes prend un autre poids. Le gouvernement français qualifie explicitement les pratiques artistiques et culturelles de puissants leviers de <em>cohésion sociale</em> ; en Allemagne, l’<em>Initiative kulturelle Integration</em>, soutenue par le gouvernement fédéral, examine sous la devise <em>Zusammenhalt in Vielfalt</em> comment la culture peut favoriser la coexistence dans une société plurielle ; en Espagne, le ministère présente la culture comme un axe de cohésion territoriale et sociale ; un programme italien récent décrit explicitement la culture comme un instrument permettant de renforcer la cohésion sociale et la participation citoyenne. L’Union européenne, elle aussi, relie directement la culture, dans son <em>Culture Compass</em>, à la résilience, à la cohésion sociale et territoriale ainsi qu’au développement démocratique. Ce qui frappe n’est pas que ces programmes soient identiques — ils ne le sont pas — mais que des traditions politiques et culturelles différentes convergent sans cesse vers une attente comparable : la culture est appelée à contribuer à produire de la cohésion, de la compréhension mutuelle, de la participation, de la résilience et un monde public partagé.</p>
+      `,
+        },
+      },
+
+      {
+        id: "b7",
+        html: {
+          nl: `
+        <p>Daar ligt een verdergaand risico. Wanneer culturele instellingen, subsidiemechanismen en beleidskaders systematisch waarde toekennen aan productie die verbinding, participatie, empathie of maatschappelijke cohesie kan aantonen, ontstaat een voorkeur voor kunst die zich in zulke doelstellingen laat inschrijven. Dat gebeurt niet noodzakelijk door expliciete uitsluiting; het kan evenzeer via programmering, financiering en de taal waarin artistieke relevantie wordt beoordeeld. Precies daardoor dreigt de ruimte kleiner te worden voor werk dat geen oplossing aanbiedt, geen gemeenschap sticht en geen antagonisme omzet in een gedeeld verhaal. Vanuit Mouffes democratiebegrip is dat allesbehalve een bijkomstig verlies: democratie heeft plaatsen nodig waar conflict en verschil zichtbaar en betwistbaar kunnen blijven. Vanuit Adorno geldt voor kunst iets vergelijkbaars: haar maatschappelijke kracht ligt juist in wat zich aan een vooraf gewenste functie onttrekt.</p>
+
+        <p>Het bezwaar richt zich dus niet tegen denken, verbinding, empathie of democratische weerbaarheid als mogelijke gevolgen van kunst. Integendeel. De vraag is wat er gebeurt wanneer zulke mogelijke gevolgen tot verwachting, opdracht of criterium van culturele waarde worden gemaakt. Politieke, economische en sociale verhoudingen produceren antagonismen die institutioneel moeten worden verwerkt; wanneer vervolgens aan cultuur wordt gevraagd die spanningen affectief te verzachten of symbolisch te verzoenen, verschuift een politiek probleem naar het culturele domein. Cultuur dreigt dan minder een plaats te worden waar maatschappelijke tegenstellingen zichtbaar en ervaarbaar kunnen blijven dan een middel waarmee hun gevolgen draaglijker worden gemaakt.</p>
+      `,
+
+          en: `
+        <p>There lies a further risk. When cultural institutions, funding mechanisms and policy frameworks systematically assign value to work that can demonstrate connection, participation, empathy or social cohesion, a preference emerges for art that can inscribe itself within such objectives. This does not necessarily occur through explicit exclusion; it can operate just as effectively through programming, funding and the language in which artistic relevance is assessed. Precisely for this reason, the space available to work that offers no solution, founds no community and converts no antagonism into a shared narrative risks shrinking. From Mouffe’s conception of democracy, this is anything but a secondary loss: democracy needs places where conflict and difference can remain visible and contestable. From Adorno’s perspective, something similar holds for art: its social force lies precisely in what escapes a function desired in advance.</p>
+
+        <p>The objection, then, is not directed against thought, connection, empathy or democratic resilience as possible effects of art. On the contrary. The question is what happens when such possible effects are turned into expectations, tasks or criteria of cultural value. Political, economic and social relations produce antagonisms that must be dealt with institutionally; when culture is subsequently asked to soften those tensions affectively or reconcile them symbolically, a political problem shifts into the cultural domain. Culture then risks becoming less a place where social contradictions can remain visible and palpable than a means by which their consequences are made more bearable.</p>
+      `,
+
+          fr: `
+        <p>Un risque plus profond apparaît ici. Lorsque les institutions culturelles, les mécanismes de subvention et les cadres politiques accordent systématiquement de la valeur à des productions capables de démontrer du lien, de la participation, de l’empathie ou de la cohésion sociale, une préférence se dessine en faveur d’un art susceptible de s’inscrire dans de tels objectifs. Cela ne passe pas nécessairement par une exclusion explicite ; cette sélection peut tout aussi bien s’opérer par la programmation, le financement et le langage dans lequel la pertinence artistique est évaluée. L’espace disponible pour des œuvres qui n’offrent aucune solution, ne fondent aucune communauté et ne transforment aucun antagonisme en récit partagé risque ainsi de se réduire. Du point de vue de la démocratie agonistique de Mouffe, il ne s’agit nullement d’une perte secondaire : la démocratie a besoin de lieux où conflit et différence puissent rester visibles et contestables. Du point de vue d’Adorno, quelque chose de comparable vaut pour l’art : sa force sociale réside précisément dans ce qui échappe à une fonction souhaitée d’avance.</p>
+
+        <p>L’objection ne vise donc pas la pensée, le lien, l’empathie ou la résilience démocratique en tant qu’effets possibles de l’art. Au contraire. La question est de savoir ce qui se produit lorsque de tels effets possibles deviennent des attentes, des missions ou des critères de valeur culturelle. Les rapports politiques, économiques et sociaux produisent des antagonismes qui doivent être traités institutionnellement ; lorsque l’on demande ensuite à la culture d’atténuer affectivement ces tensions ou de les réconcilier symboliquement, un problème politique se déplace vers le domaine culturel. La culture risque alors de devenir moins un lieu où les contradictions sociales peuvent rester visibles et sensibles qu’un moyen de rendre leurs conséquences plus supportables.</p>
+      `,
+        },
+      },
+
+      {
+        id: "b8",
+        html: {
+          nl: `
+        <p>Verbinding kan waardevol zijn, maar is politiek onbepaald. Democratie vraagt niet om maximale verbinding, maar om instituties en culturele vormen waarin verschillen kunnen blijven bestaan. Kunst kan verbinden, maar haar democratische betekenis kan evenzeer liggen in haar vermogen verbinding te weigeren, gemeenschap te verstoren of tegenstellingen onverzoend te laten.</p>
+      `,
+
+          en: `
+        <p>Connection can be valuable, but it is politically indeterminate. Democracy does not require maximum connection, but institutions and cultural forms within which differences can continue to exist. Art can connect, but its democratic significance may equally lie in its capacity to refuse connection, disrupt community or leave contradictions unreconciled.</p>
+      `,
+
+          fr: `
+        <p>Le lien peut avoir de la valeur, mais il est politiquement indéterminé. La démocratie n’exige pas un maximum de lien, mais des institutions et des formes culturelles au sein desquelles les différences puissent subsister. L’art peut créer du lien, mais sa signification démocratique peut tout autant résider dans sa capacité à refuser le lien, à perturber la communauté ou à laisser les contradictions sans réconciliation.</p>
+      `,
         },
       },
     ],
+
+    marginalia: [],
   },
 ];
