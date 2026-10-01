@@ -2,6 +2,7 @@
 import { NewsletterSignupForm } from "./NewsletterSignupForm";
 import { useRef, useState, useEffect } from "react";
 import type { Locale } from "@/lib/i18n";
+import { usePathname } from "next/navigation";
 
 const copy = {
   en: {
@@ -49,13 +50,17 @@ const DISMISS_DAYS = 21;
 const AUTO_OPEN_DELAY = 8000;
 
 const STORAGE_KEYS = {
+  subscribed: "interstice_newsletter_subscribed",
+  unsubscribed: "interstice_newsletter_unsubscribed",
   dismissedUntil: "interstice_newsletter_dismissed_until",
-  pendingUntil: "interstice_newsletter_pending_until",
-  confirmed: "interstice_newsletter_confirmed",
 };
 
 export function NewsletterModal({ locale }: { locale: Locale }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
+
+  const pathname = usePathname();
+
+  const isNewsletterPage = pathname.includes("/newsletter");
 
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<
@@ -65,36 +70,45 @@ export function NewsletterModal({ locale }: { locale: Locale }) {
   const t = copy[locale];
 
   useEffect(() => {
-    const subscribed =
-      localStorage.getItem("interstice_newsletter_subscribed") === "true";
-
-    if (subscribed) {
+    if (isNewsletterPage) {
       return;
     }
 
-    const now = Date.now();
+    const subscribed = localStorage.getItem(STORAGE_KEYS.subscribed) === "true";
+
+    const unsubscribed =
+      localStorage.getItem(STORAGE_KEYS.unsubscribed) === "true";
+
+    if (subscribed || unsubscribed) {
+      return;
+    }
 
     const dismissedUntil = Number(
       localStorage.getItem(STORAGE_KEYS.dismissedUntil) || 0,
     );
 
-    if (now < dismissedUntil) {
+    if (Date.now() < dismissedUntil) {
       return;
     }
 
     const timer = window.setTimeout(() => {
-      // Check again: the user may have subscribed on the newsletter
-      // page during those eight seconds.
+      /*
+       * Check again after 8 seconds.
+       * The user may meanwhile have subscribed.
+       */
       const subscribed =
-        localStorage.getItem("interstice_newsletter_subscribed") === "true";
+        localStorage.getItem(STORAGE_KEYS.subscribed) === "true";
 
-      if (!subscribed && !dialogRef.current?.open) {
+      const unsubscribed =
+        localStorage.getItem(STORAGE_KEYS.unsubscribed) === "true";
+
+      if (!subscribed && !unsubscribed && !dialogRef.current?.open) {
         dialogRef.current?.showModal();
       }
     }, AUTO_OPEN_DELAY);
 
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [isNewsletterPage]);
 
   async function subscribe() {
     setStatus("loading");

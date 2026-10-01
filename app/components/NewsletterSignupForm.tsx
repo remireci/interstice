@@ -75,6 +75,10 @@ export function NewsletterSignupForm({
 
       localStorage.setItem("interstice_newsletter_subscribed", "true");
 
+      localStorage.removeItem("interstice_newsletter_unsubscribed");
+
+      localStorage.removeItem("interstice_newsletter_dismissed_until");
+
       setEmail("");
       setStatus("success");
     } catch {

@@ -70,6 +70,10 @@ export function NewsletterUnsubscribe({
 
       localStorage.removeItem("interstice_newsletter_subscribed");
 
+      localStorage.setItem("interstice_newsletter_unsubscribed", "true");
+
+      localStorage.removeItem("interstice_newsletter_dismissed_until");
+
       setStatus("success");
     } catch {
       setStatus("error");
