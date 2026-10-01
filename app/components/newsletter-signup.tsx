@@ -1,11 +1,11 @@
 "use client";
-
-import { useRef, useState } from "react";
+import { NewsletterSignupForm } from "./NewsletterSignupForm";
+import { useRef, useState, useEffect } from "react";
 import type { Locale } from "@/lib/i18n";
 
 const copy = {
   en: {
-    link: "subscribe",
+    link: "newsletter",
     title: "Follow Interstice",
     text: "Receive new Interstice interventions by email.",
     placeholder: "Email address",
@@ -18,7 +18,7 @@ const copy = {
   },
 
   nl: {
-    link: "inschrijven",
+    link: "nieuwsbrief",
     title: "Volg Interstice",
     text: "Ontvang nieuwe Interstice-interventies per e-mail.",
     placeholder: "E-mailadres",
@@ -31,7 +31,7 @@ const copy = {
   },
 
   fr: {
-    link: "s’abonner",
+    link: "newsletter",
     title: "Suivre Interstice",
     text: "Recevez les nouvelles interventions d’Interstice par e-mail.",
     placeholder: "Adresse e-mail",
@@ -44,6 +44,16 @@ const copy = {
   },
 } as const;
 
+const DISMISS_DAYS = 21;
+// const PENDING_DAYS = 7;
+const AUTO_OPEN_DELAY = 8000;
+
+const STORAGE_KEYS = {
+  dismissedUntil: "interstice_newsletter_dismissed_until",
+  pendingUntil: "interstice_newsletter_pending_until",
+  confirmed: "interstice_newsletter_confirmed",
+};
+
 export function NewsletterModal({ locale }: { locale: Locale }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -53,6 +63,38 @@ export function NewsletterModal({ locale }: { locale: Locale }) {
   >("idle");
 
   const t = copy[locale];
+
+  useEffect(() => {
+    const subscribed =
+      localStorage.getItem("interstice_newsletter_subscribed") === "true";
+
+    if (subscribed) {
+      return;
+    }
+
+    const now = Date.now();
+
+    const dismissedUntil = Number(
+      localStorage.getItem(STORAGE_KEYS.dismissedUntil) || 0,
+    );
+
+    if (now < dismissedUntil) {
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
+      // Check again: the user may have subscribed on the newsletter
+      // page during those eight seconds.
+      const subscribed =
+        localStorage.getItem("interstice_newsletter_subscribed") === "true";
+
+      if (!subscribed && !dialogRef.current?.open) {
+        dialogRef.current?.showModal();
+      }
+    }, AUTO_OPEN_DELAY);
+
+    return () => window.clearTimeout(timer);
+  }, []);
 
   async function subscribe() {
     setStatus("loading");
@@ -73,8 +115,20 @@ export function NewsletterModal({ locale }: { locale: Locale }) {
       return;
     }
 
+    // const pendingUntil = Date.now() + PENDING_DAYS * 24 * 60 * 60 * 1000;
+
+    // localStorage.setItem(STORAGE_KEYS.pendingUntil, String(pendingUntil));
+
     setEmail("");
     setStatus("success");
+  }
+
+  function closeDialog() {
+    const dismissedUntil = Date.now() + DISMISS_DAYS * 24 * 60 * 60 * 1000;
+
+    localStorage.setItem(STORAGE_KEYS.dismissedUntil, String(dismissedUntil));
+
+    dialogRef.current?.close();
   }
 
   return (
@@ -87,12 +141,19 @@ export function NewsletterModal({ locale }: { locale: Locale }) {
         {t.link}
       </button>
 
-      <dialog ref={dialogRef} className="newsletter-dialog">
+      <dialog
+        ref={dialogRef}
+        className="newsletter-dialog"
+        onCancel={(event) => {
+          event.preventDefault();
+          closeDialog();
+        }}
+      >
         <button
           type="button"
           className="newsletter-dialog__close"
           aria-label={t.close}
-          onClick={() => dialogRef.current?.close()}
+          onClick={closeDialog}
         >
           ×
         </button>
@@ -100,44 +161,7 @@ export function NewsletterModal({ locale }: { locale: Locale }) {
         <h2>{t.title}</h2>
         <p>{t.text}</p>
 
-        <form
-          onSubmit={async (event) => {
-            event.preventDefault();
-            await subscribe();
-          }}
-        >
-          <label htmlFor="newsletter-email" className="sr-only">
-            {t.placeholder}
-          </label>
-
-          <input
-            id="newsletter-email"
-            type="email"
-            value={email}
-            placeholder={t.placeholder}
-            autoComplete="email"
-            required
-            onChange={(event) => setEmail(event.target.value)}
-          />
-
-          <button
-            type="submit"
-            className="newsletter-dialog__submit"
-            disabled={status === "loading"}
-          >
-            {t.submit}
-          </button>
-
-          <p className="newsletter-dialog__consent">{t.consent}</p>
-
-          {status === "success" && (
-            <p className="newsletter-dialog__message">{t.success}</p>
-          )}
-
-          {status === "error" && (
-            <p className="newsletter-dialog__message">{t.error}</p>
-          )}
-        </form>
+        <NewsletterSignupForm locale={locale} idPrefix="newsletter-modal" />
       </dialog>
     </>
   );

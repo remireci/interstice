@@ -1168,3 +1168,91 @@ a:hover {
   font-style: italic;
   opacity: 0.65;
 }
+
+.newsletter-page {
+  width: min(100% - 2rem, 54rem);
+  margin: 0 auto;
+  padding: 5rem 0 7rem;
+}
+
+.newsletter-page__signup {
+  max-width: 42rem;
+  margin-bottom: 5rem;
+}
+
+.newsletter-page__eyebrow,
+.newsletter-page__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.newsletter-page__intro {
+  max-width: 38rem;
+  margin: 1rem 0 2rem;
+}
+
+.newsletter-signup__fields {
+  display: flex;
+  width: 100%;
+}
+
+.newsletter-signup__fields input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-right: 0;
+  background: #fff;
+  color: var(--color-text);
+  font: inherit;
+}
+
+.newsletter-signup__submit {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-text);
+  background: var(--color-text);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.newsletter-signup__submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.newsletter-signup__consent {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.newsletter-signup__message {
+  margin-top: 0.75rem;
+}
+
+.newsletter-page__current {
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.newsletter-page__intervention {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.newsletter-page__intervention h2 {
+  margin-top: 0.75rem;
+}
+
+.newsletter-page__intervention span,
+.newsletter-page__previous a {
+  text-decoration: underline;
+}
+
+.newsletter-page__previous {
+  margin-top: 3rem;
+}
