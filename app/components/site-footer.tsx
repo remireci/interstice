@@ -22,7 +22,7 @@ const labels = {
   fr: {
     contact: "contact",
     privacy: "confidentialité",
-    unsubscribe: "se désinscrire",
+    unsubscribe: "se désabonner",
     manifesto: "manifeste",
     interventions: "interventions",
     noCookies: "Pas de cookies. Analytique respectueuse de la vie privée.",
@@ -37,9 +37,14 @@ export function SiteFooter({ locale }: { locale: Locale }) {
       <div className="site-footer__inner">
         <nav className="site-footer__nav" aria-label="Footer">
           <Link href={`/${locale}/contact`}>{t.contact}</Link>
+
           <Link href={`/${locale}/privacy`}>{t.privacy}</Link>
 
           <NewsletterModal locale={locale} />
+
+          <Link href={`/${locale}/newsletter/unsubscribe`}>
+            {t.unsubscribe}
+          </Link>
         </nav>
 
         <p className="site-footer__note">{t.noCookies}</p>
