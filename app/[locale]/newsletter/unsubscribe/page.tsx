@@ -1,5 +1,6 @@
 import type { Locale } from "@/lib/i18n";
 import { NewsletterUnsubscribe } from "./NewsletterUnsubscribe";
+import { NewsletterUnsubscribeRequest } from "./NewsletterUnsubscribeRequest";
 
 const copy = {
   en: {
@@ -40,11 +41,15 @@ export default async function UnsubscribePage({
 
         <p className="newsletter-page__intro">{t.text}</p>
 
-        <NewsletterUnsubscribe
-          locale={locale}
-          subscriberId={id}
-          token={token}
-        />
+        {id && token ? (
+          <NewsletterUnsubscribe
+            locale={locale}
+            subscriberId={id}
+            token={token}
+          />
+        ) : (
+          <NewsletterUnsubscribeRequest locale={locale} />
+        )}
       </section>
     </main>
   );

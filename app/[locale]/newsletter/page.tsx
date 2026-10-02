@@ -13,6 +13,8 @@ const copy = {
     current: "Current intervention",
     earlier: "Earlier intervention",
     read: "Read the intervention",
+    unsubscribeText: "Already subscribed?",
+    unsubscribeLink: "Unsubscribe",
   },
 
   nl: {
@@ -23,6 +25,8 @@ const copy = {
     current: "Huidige interventie",
     earlier: "Eerdere interventie",
     read: "Lees de interventie",
+    unsubscribeText: "Al ingeschreven?",
+    unsubscribeLink: "Uitschrijven",
   },
 
   fr: {
@@ -33,6 +37,8 @@ const copy = {
     current: "Intervention actuelle",
     earlier: "Intervention précédente",
     read: "Lire l’intervention",
+    unsubscribeText: "Déjà inscrit·e ?",
+    unsubscribeLink: "Se désabonner",
   },
 } as const;
 
@@ -71,6 +77,14 @@ export default async function NewsletterPage({
           idPrefix="newsletter-page"
           source={signupSource}
         />
+      </section>
+      <section className="newsletter-page__unsubscribe">
+        <p>
+          {t.unsubscribeText}{" "}
+          <Link href={`/${locale}/newsletter/unsubscribe`}>
+            {t.unsubscribeLink}
+          </Link>
+        </p>
       </section>
 
       {current && (
